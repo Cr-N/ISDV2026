@@ -1,0 +1,20 @@
+#simulator {
+  border-radius: 15px;
+  background: #f8f9fa;
+}
+
+#simulator button {
+  transition: 0.2s;
+}
+
+#simulator button:hover {
+  transform: scale(1.03);
+}
+
+#map {
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}

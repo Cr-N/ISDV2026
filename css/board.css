@@ -1,3 +1,4 @@
+.board-filters { margin-bottom: 26px; }
 .board-wrap {
   position: relative;
   min-height: 680px;
@@ -21,7 +22,14 @@
 .thread-layer line {
   stroke: #c9242e;
   stroke-width: 4;
+  opacity: .52;
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.7));
+  transition: .2s ease;
+}
+.thread-layer line.thread-active {
+  stroke: #ff3344;
+  stroke-width: 7;
+  opacity: 1;
 }
 .person-pin {
   position: absolute;
@@ -48,10 +56,14 @@
   background: #b9141d;
   box-shadow: inset 0 2px 3px rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.4);
 }
-.person-pin:hover, .person-pin:focus {
-  transform: rotate(0deg) scale(1.05);
+.person-pin:hover, .person-pin:focus, .person-pin.is-highlighted {
+  transform: rotate(0deg) scale(1.06);
   outline: 3px solid rgba(245,197,66,0.55);
   z-index: 4;
+}
+.person-pin.is-dimmed {
+  filter: grayscale(1) brightness(.65);
+  opacity: .42;
 }
 .photo-placeholder {
   height: 92px;
@@ -102,7 +114,7 @@
 @media (max-width: 576px) {
   .board-wrap { min-height: 1250px; }
   .person-pin { left: 50% !important; right: auto !important; transform: translateX(-50%) rotate(var(--angle,0deg)); }
-  .person-pin:hover { transform: translateX(-50%) scale(1.04); }
+  .person-pin:hover, .person-pin.is-highlighted { transform: translateX(-50%) scale(1.04); }
   .pin-oppenheimer { top: 4%; }
   .pin-groves { top: 17%; }
   .pin-truman { top: 30%; }

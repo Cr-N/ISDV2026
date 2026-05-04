@@ -80,7 +80,15 @@
   background: rgba(245,197,66,0.08);
   border-radius: 12px;
 }
-.source-link { font-weight: 850; text-decoration: none; }
+.connection-chip {
+  display: inline-block;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(245,197,66,0.24);
+  background: rgba(245,197,66,0.08);
+  color: #dfe8f3 !important;
+  font-weight: 750;
+}
 @media (max-width: 991px) {
   .timeline-layout { grid-template-columns: 1fr; }
   .timeline-detail { position: static; }

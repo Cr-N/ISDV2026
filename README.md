@@ -1,22 +1,38 @@
-# Proiectul Manhattan – Dosarul care a schimbat lumea
+# Proiectul Manhattan – Dosar declasificat interactiv (V2)
 
-Prototip web interactiv pentru Concursul Național Interdisciplinar „Istorie și Societate în Dimensiune Virtuală” 2026, secțiunea Istorie – Pagini Web.
+Proiect web HTML/CSS/JavaScript pentru concursul ISDV 2026, secțiunea Istorie – Pagini Web.
 
-## Tehnologii folosite
+## Ce este nou în V2
 
-- HTML5
-- CSS3
-- JavaScript vanilla
-- Bootstrap 5 pentru layout responsive, navbar, modale și taburi
-- Leaflet.js pentru harta interactivă
-- AOS.js pentru animații discrete la scroll
-- Font Awesome pentru iconuri
+- Rezumat transformat în „briefing declasificat” cu paragrafe extensibile.
+- Secțiunea „Ce este și de ce contează?” cu flip cards și diagramă radială.
+- Document adnotat pentru Scrisoarea Einstein–Szilárd.
+- Timeline interactiv extins, cu conexiuni istorice.
+- Harta Leaflet/OSM a fost înlocuită cu iframe-uri oficiale NPS pentru:
+  - cele trei locații principale;
+  - Hanford;
+  - Los Alamos;
+  - Oak Ridge.
+- Peg board cu filtre: oameni de știință, militar, politic, emigranți europeni, etică.
+- Arbore tehnologic uraniu/plutoniu.
+- Animații pe pași pentru designul gun-type și designul cu implozie.
+- Countdown interactiv pentru testul Trinity.
+- Panou comparativ Hiroshima/Nagasaki.
+- „Undă de șoc istorică” pentru impactul pe termen lung.
+- Tribunal moral interactiv.
+- Secțiune de limitări și nivel de certitudine.
+- Arhivă digitală filtrabilă pentru surse.
 
-## De ce Leaflet.js?
+## Librării folosite
 
-Leaflet este folosit doar pentru componenta de hartă. Nu este un framework de aplicație și nu controlează întregul proiect. Este potrivit deoarece oferă rapid marker-e, popup-uri, zoom și trasee vizuale între locații istorice.
+- Bootstrap 5: layout, navbar, butoane, responsive design.
+- AOS.js: animații discrete la scroll.
+- Font Awesome: iconuri.
+- NPS Maps iframe: hărți oficiale, înlocuind harta Leaflet/OSM care putea primi erori de tip access blocked.
 
-## Structura proiectului
+Nu se folosește React/Vue/Angular. Proiectul rămâne clasic: HTML, CSS și JavaScript.
+
+## Structura fișierelor
 
 ```text
 manhattan-isdv/
@@ -38,22 +54,10 @@ manhattan-isdv/
     └── icons/
 ```
 
-## Funcționalități implementate
+## Cum rulezi
 
-- Hero section cu atmosferă de dosar declasificat
-- Cronologie clickable
-- Hartă interactivă cu marker-e pentru Los Alamos, Oak Ridge, Hanford, Chicago, Trinity, Hiroshima și Nagasaki
-- Peg board interactiv cu personaje-cheie
-- Modale cu fișe istorice
-- Simulator vizual simplificat pentru reacția în lanț
-- Secțiune Little Boy vs Fat Man
-- Exercițiu interactiv de decizie morală
-- Bibliografie pe taburi
+Deschide `index.html` în browser. Pentru hărți și librăriile externe este nevoie de conexiune la internet.
 
-## Cum rulezi proiectul
+## Recomandare pentru imagini
 
-Deschide `index.html` în browser. Pentru hartă și librăriile externe este nevoie de conexiune la internet, deoarece Bootstrap, Leaflet, AOS și tile-urile OpenStreetMap sunt încărcate din CDN.
-
-## Observații
-
-Folderul `assets/images` este pregătit pentru imagini locale. În versiunea finală se pot adăuga imagini oficiale din sursele recomandate, cu verificarea condițiilor de reutilizare și creditare.
+Momentan site-ul folosește mai ales elemente vizuale generate prin CSS și surse externe prin link. Pentru versiunea finală, descarcă imagini istorice cu licență clară și pune-le în `assets/images/`, apoi înlocuiește placeholder-ele cu fotografii reale.

@@ -17,85 +17,261 @@ function initReadingProgress() {
   update();
 }
 
-function initOverviewCards() {
-  const title = document.getElementById("contentModalTitle");
-  const body = document.getElementById("contentModalBody");
-  const modal = document.getElementById("contentModal");
-  document.querySelectorAll("[data-card]").forEach(card => {
-    card.addEventListener("click", () => {
-      const item = overviewCards[card.dataset.card];
-      title.textContent = item.title;
-      body.innerHTML = `
-        <p>${item.body}</p>
-        <a href="${item.source}" target="_blank" rel="noopener" class="source-link">Sursă recomandată <i class="fa-solid fa-up-right-from-square"></i></a>
-      `;
-      bootstrap.Modal.getOrCreateInstance(modal).show();
+function initBriefing() {
+  document.querySelectorAll(".briefing-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = document.getElementById(`briefing-${btn.dataset.briefingTarget}`);
+      const item = btn.closest(".briefing-item");
+      if (!target || !item) return;
+      item.classList.toggle("active");
+      target.classList.toggle("show");
+      btn.querySelector("i")?.classList.toggle("rotate-180");
     });
   });
 }
 
-function initReaction() {
-  const area = document.getElementById("reactionArea");
-  const start = document.getElementById("startReaction");
-  const reset = document.getElementById("resetReaction");
-  if (!area || !start || !reset) return;
+function initFlipCards() {
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => card.classList.toggle("flipped"));
+  });
+}
 
-  function spawn(level = 0, x = 50, y = 50) {
-    if (level > 3) return;
-    const count = level === 0 ? 3 : 2;
-    for (let i = 0; i < count; i++) {
-      const particle = document.createElement("div");
-      particle.className = "particle";
-      const angle = (Math.PI * 2 / count) * i + Math.random() * 0.8;
-      const distance = 55 + level * 42 + Math.random() * 28;
-      const nx = Math.min(88, Math.max(5, x + Math.cos(angle) * distance / 3.1));
-      const ny = Math.min(84, Math.max(8, y + Math.sin(angle) * distance / 2.2));
-      particle.style.left = `${nx}%`;
-      particle.style.top = `${ny}%`;
-      particle.textContent = level === 3 ? "E" : "n";
-      area.appendChild(particle);
-      setTimeout(() => spawn(level + 1, nx, ny), 320 + Math.random() * 260);
+function initRadialSystem() {
+  const panel = document.getElementById("radialPanel");
+  if (!panel || typeof radialInfo === "undefined") return;
+  document.querySelectorAll(".radial-node").forEach(node => {
+    node.addEventListener("click", () => {
+      const [title, text] = radialInfo[node.dataset.radial] || [];
+      document.querySelectorAll(".radial-node").forEach(n => n.classList.remove("active"));
+      node.classList.add("active");
+      panel.innerHTML = `
+        <p class="eyebrow">Domeniu integrat</p>
+        <h3>${title}</h3>
+        <p>${text}</p>
+      `;
+    });
+  });
+}
+
+function initDocumentAnnotations() {
+  const explainer = document.getElementById("docExplainer");
+  if (!explainer || typeof documentNotes === "undefined") return;
+  document.querySelectorAll(".doc-hotspot").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const [title, text] = documentNotes[btn.dataset.doc] || [];
+      document.querySelectorAll(".doc-hotspot").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      explainer.classList.remove("detail-enter");
+      void explainer.offsetWidth;
+      explainer.classList.add("detail-enter");
+      explainer.innerHTML = `
+        <p class="eyebrow">Adnotare</p>
+        <h3>${title}</h3>
+        <p>${text}</p>
+      `;
+    });
+  });
+}
+
+function initTechTree() {
+  const panel = document.getElementById("techTreePanel");
+  if (!panel || typeof techInfo === "undefined") return;
+  document.querySelectorAll(".tech-node").forEach(node => {
+    node.addEventListener("click", () => {
+      const [title, text] = techInfo[node.dataset.tech] || [];
+      document.querySelectorAll(".tech-node").forEach(n => n.classList.remove("active"));
+      node.classList.add("active");
+      panel.innerHTML = `
+        <p class="eyebrow">Nod tehnologic</p>
+        <h3>${title}</h3>
+        <p>${text}</p>
+      `;
+    });
+  });
+}
+
+function createStepAnimation(config) {
+  let step = 0;
+  let timer = null;
+  const root = document.getElementById(config.rootId);
+  const label = document.getElementById(config.labelId);
+  const text = document.getElementById(config.textId);
+  const prev = document.getElementById(config.prevId);
+  const next = document.getElementById(config.nextId);
+  const auto = document.getElementById(config.autoId);
+  if (!root || !label || !text || !prev || !next || !auto) return;
+
+  const update = () => {
+    root.dataset.step = String(step + 1);
+    label.textContent = `Pasul ${step + 1} / ${config.steps.length}`;
+    text.textContent = config.steps[step];
+  };
+
+  const go = direction => {
+    step = (step + direction + config.steps.length) % config.steps.length;
+    update();
+  };
+
+  prev.addEventListener("click", () => go(-1));
+  next.addEventListener("click", () => go(1));
+  auto.addEventListener("click", () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+      auto.textContent = "Rulează";
+      return;
     }
+    auto.textContent = "Oprește";
+    timer = setInterval(() => go(1), 1100);
+  });
+  update();
+}
+
+function initBombAnimations() {
+  createStepAnimation({
+    rootId: "gunAnimation",
+    labelId: "gunStepLabel",
+    textId: "gunStepText",
+    prevId: "gunPrev",
+    nextId: "gunNext",
+    autoId: "gunAuto",
+    steps: gunSteps
+  });
+  createStepAnimation({
+    rootId: "implosionAnimation",
+    labelId: "implosionStepLabel",
+    textId: "implosionStepText",
+    prevId: "implosionPrev",
+    nextId: "implosionNext",
+    autoId: "implosionAuto",
+    steps: implosionSteps
+  });
+}
+
+function initTrinityCountdown() {
+  const display = document.getElementById("trinityDisplay");
+  const text = document.getElementById("trinityText");
+  const next = document.getElementById("trinityNext");
+  if (!display || !text || !next || typeof trinityMoments === "undefined") return;
+  let index = 0;
+  next.addEventListener("click", () => {
+    index = (index + 1) % trinityMoments.length;
+    const [time, title, body] = trinityMoments[index];
+    display.textContent = time;
+    display.classList.remove("pulse-once");
+    void display.offsetWidth;
+    display.classList.add("pulse-once");
+    text.innerHTML = `
+      <p class="eyebrow">Testul Trinity</p>
+      <h3>${title}</h3>
+      <p>${body}</p>
+    `;
+  });
+}
+
+function initImpactComparison() {
+  const hiroshima = document.getElementById("hiroshimaCard");
+  const nagasaki = document.getElementById("nagasakiCard");
+  if (!hiroshima || !nagasaki || typeof impactData === "undefined") return;
+
+  function render(type) {
+    const data = impactData[type];
+    const makeCard = item => `
+      <div class="city-date">${item[1]}</div>
+      <h3>${item[0]}</h3>
+      <p>${item[2]}</p>
+    `;
+    hiroshima.innerHTML = makeCard(data.hiroshima);
+    nagasaki.innerHTML = makeCard(data.nagasaki);
   }
 
-  start.addEventListener("click", () => spawn());
-  reset.addEventListener("click", () => {
-    area.querySelectorAll(".particle").forEach(p => p.remove());
+  document.querySelectorAll(".impact-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".impact-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      render(tab.dataset.impact);
+    });
   });
+  render("design");
 }
 
-function initDecisions() {
-  const result = document.getElementById("decisionResult");
-  document.querySelectorAll(".decision-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".decision-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const item = decisions[btn.dataset.decision];
-      result.innerHTML = `
-        <p class="eyebrow">Analiză istorică</p>
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-        <p class="mb-0"><strong>Concluzie:</strong> Proiectul Manhattan nu poate fi înțeles doar tehnic; decizia de folosire aparține și istoriei morale a secolului XX.</p>
+function initShockwave() {
+  const panel = document.getElementById("shockPanel");
+  if (!panel || typeof waveInfo === "undefined") return;
+  document.querySelectorAll(".shock-node").forEach(node => {
+    node.addEventListener("click", () => {
+      const [title, text] = waveInfo[node.dataset.wave] || [];
+      document.querySelectorAll(".shock-node").forEach(n => n.classList.remove("active"));
+      node.classList.add("active");
+      panel.innerHTML = `
+        <p class="eyebrow">Consecință</p>
+        <h3>${title}</h3>
+        <p>${text}</p>
       `;
     });
   });
 }
 
-function renderSources() {
-  const render = (id, list) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.innerHTML = list.map(([title, desc, url]) => `
-      <article class="source-item">
-        <strong>${title}</strong>
-        <p>${desc}</p>
-        <a href="${url}" target="_blank" rel="noopener">Deschide sursa <i class="fa-solid fa-up-right-from-square"></i></a>
-      </article>
-    `).join("");
-  };
-  render("primarySources", sources.primary);
-  render("secondarySources", sources.secondary);
-  render("visualSources", sources.visuals);
+function initTribunal() {
+  const result = document.getElementById("tribunalResult");
+  if (!result) return;
+  const selected = { pro: 0, contra: 0 };
+
+  function update() {
+    let title = "Poziție mixtă";
+    let body = "Ai selectat argumente din ambele tabere. Aceasta reflectă complexitatea reală a dezbaterii istorice.";
+    if (selected.pro > selected.contra + 1) {
+      title = "Apropiat de logica decidenților militari și politici";
+      body = "Selecția ta pune accent pe încheierea rapidă a războiului și pe efectul strategic al bombei.";
+    } else if (selected.contra > selected.pro + 1) {
+      title = "Apropiat de cercetătorii critici";
+      body = "Selecția ta pune accent pe costul uman, alternativa demonstrației și riscul unei curse nucleare.";
+    } else if (selected.pro === 0 && selected.contra === 0) {
+      title = "Selectează argumente";
+      body = "Alege argumente din ambele coloane. Site-ul va interpreta poziția ta ca exercițiu istoric, nu moral absolut.";
+    }
+    result.innerHTML = `
+      <p class="eyebrow">Verdict provizoriu</p>
+      <h3>${title}</h3>
+      <p>${body}</p>
+      <p class="mb-0"><strong>Scor argumentativ:</strong> ${selected.pro} pro / ${selected.contra} critic</p>
+    `;
+  }
+
+  document.querySelectorAll(".argument-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      const side = chip.dataset.side;
+      chip.classList.toggle("active");
+      selected[side] += chip.classList.contains("active") ? 1 : -1;
+      update();
+    });
+  });
+}
+
+function renderSourceArchive(filter = "all") {
+  const archive = document.getElementById("sourceArchive");
+  if (!archive || typeof sourceArchive === "undefined") return;
+  const items = sourceArchive.filter(item => filter === "all" || item.tags.includes(filter));
+  archive.innerHTML = items.map(item => `
+    <article class="source-card">
+      <div class="source-tags">${item.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+      <p class="used-in"><strong>Folosită în secțiunea:</strong> ${item.section}</p>
+      <a href="${item.url}" target="_blank" rel="noopener">Deschide sursa <i class="fa-solid fa-up-right-from-square"></i></a>
+    </article>
+  `).join("");
+}
+
+function initSourceFilters() {
+  document.querySelectorAll(".source-filter").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".source-filter").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSourceArchive(btn.dataset.sourceFilter);
+    });
+  });
+  renderSourceArchive("all");
 }
 
 function initActiveNav() {
@@ -114,12 +290,19 @@ function initActiveNav() {
 document.addEventListener("DOMContentLoaded", () => {
   initAOS();
   initReadingProgress();
+  initBriefing();
+  initFlipCards();
+  initRadialSystem();
+  initDocumentAnnotations();
   initTimeline();
-  initMap();
+  initMapHub();
   initBoard();
-  initOverviewCards();
-  initReaction();
-  initDecisions();
-  renderSources();
+  initTechTree();
+  initBombAnimations();
+  initTrinityCountdown();
+  initImpactComparison();
+  initShockwave();
+  initTribunal();
+  initSourceFilters();
   initActiveNav();
 });

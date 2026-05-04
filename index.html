@@ -1,110 +1,423 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ro" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <title>Proiectul Manhattan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proiect web interactiv despre Proiectul Manhattan pentru ISDV 2026 - secțiunea Pagini Web, Istorie.">
+  <title>Proiectul Manhattan | Dosarul care a schimbat lumea</title>
+
+  <!-- Bootstrap 5: layout responsive, navbar, grid, modal, tabs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Leaflet: harta interactivă -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQooKfOBnDTVqYB9Stp4hBW0lJ+MZqo=" crossorigin="">
+
+  <!-- AOS: animații discrete la scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome: iconuri ușoare -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/board.css">
 </head>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <body>
-    <div class="container-fluid p-4 bg-subtitle my-5">
-    <h1 class="text-center text-light fs-1">Proiectul Manhattan</h1>
-    </div>
+  <div class="reading-progress" id="readingProgress"></div>
 
+  <nav class="navbar navbar-expand-lg fixed-top glass-nav" aria-label="Navigație principală">
     <div class="container">
-
-    <!-- Ce este -->
-    <div class="my-5">
-        <h2>1. Ce este Proiectul Manhattan?</h2>
-        <p class="fs-5">
-        :contentReference[oaicite:0]{index=0} a fost un program secret de cercetare și dezvoltare desfășurat de Statele Unite în timpul celui de-Al Doilea Război Mondial, cu scopul de a construi prima bombă atomică. Proiectul a implicat colaborarea dintre oameni de știință, ingineri și militari, fiind unul dintre cele mai complexe proiecte științifice din istorie.
-        </p>
-    </div>
-
-    <!-- De ce conteaza -->
-    <div class="my-5">
-        <h2>2. De ce este important?</h2>
-        <p class="fs-5">
-        Proiectul a schimbat radical cursul istoriei, marcând începutul erei nucleare. Utilizarea armelor atomice a influențat sfârșitul războiului și a determinat apariția unui nou tip de conflict – războiul rece, bazat pe descurajare nucleară.
-        </p>
-    </div>
-
-    <!-- Context -->
-    <div class="my-5">
-        <h2>3. Contextul apariției</h2>
-        <p class="fs-5">
-        În timpul celui de-Al Doilea Război Mondial, exista teama că :contentReference[oaicite:1]{index=1} ar putea dezvolta o armă nucleară. În 1939, :contentReference[oaicite:2]{index=2} a semnat o scrisoare către președintele :contentReference[oaicite:3]{index=3}, avertizând asupra acestui pericol, ceea ce a dus la inițierea proiectului.
-        </p>
-    </div>
-
-    <!-- Persoane -->
-    <div class="my-5">
-        <h2>4. Persoane implicate</h2>
-        <p class="fs-5">
-        Printre figurile importante se numără:
-        </p>
-        <ul class="fs-5">
-        <li>:contentReference[oaicite:4]{index=4} – coordonator științific</li>
-        <li>:contentReference[oaicite:5]{index=5} – lider militar al proiectului</li>
-        <li>:contentReference[oaicite:6]{index=6} – contribuții majore în fizica nucleară</li>
+      <a class="navbar-brand fw-bold" href="#home">
+        <span class="brand-mark">MP</span> Proiectul Manhattan
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Deschide meniul">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small">
+          <li class="nav-item"><a class="nav-link" href="#overview">Ce este?</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline">Cronologie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map-section">Hartă</a></li>
+          <li class="nav-item"><a class="nav-link" href="#board">Personaje</a></li>
+          <li class="nav-item"><a class="nav-link" href="#science">Tehnologie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ethics">Etică</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sources">Surse</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Desfasurare -->
-    <div class="my-5">
-        <h2>5. Desfășurarea proiectului</h2>
-        <p class="fs-5">
-        Proiectul s-a desfășurat în mai multe locații secrete:
-        </p>
-        <ul class="fs-5">
-        <li>:contentReference[oaicite:7]{index=7} – proiectare bombă</li>
-        <li>:contentReference[oaicite:8]{index=8} – îmbogățirea uraniului</li>
-        <li>:contentReference[oaicite:9]{index=9} – producerea plutoniului</li>
-        </ul>
+  <header id="home" class="hero-section d-flex align-items-center">
+    <div class="hero-bg-noise"></div>
+    <div class="hero-radar"></div>
+    <div class="container position-relative">
+      <div class="row min-vh-100 align-items-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <p class="eyebrow mb-3"><i class="fa-solid fa-folder-open me-2"></i> Dosar istoric interactiv · ISDV 2026</p>
+          <h1 class="display-2 fw-black text-uppercase lh-1 mb-4">Proiectul<br><span>Manhattan</span></h1>
+          <p class="lead hero-lead mb-4">Programul secret care a transformat fisiunea nucleară într-o armă și a deschis era atomică.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-warning btn-lg" href="#timeline"><i class="fa-solid fa-timeline me-2"></i>Explorează cronologia</a>
+            <a class="btn btn-outline-light btn-lg" href="#map-section"><i class="fa-solid fa-map-location-dot me-2"></i>Deschide harta</a>
+            <a class="btn btn-outline-light btn-lg" href="#board"><i class="fa-solid fa-user-secret me-2"></i>Personajele-cheie</a>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="250">
+          <div class="classified-card">
+            <div class="stamp">DECLASIFICAT</div>
+            <h2 class="h5 mb-3">Fișă rapidă</h2>
+            <ul class="stat-list list-unstyled mb-0">
+              <li><strong>1939–1945</strong><span>de la avertisment la folosire</span></li>
+              <li><strong>3</strong><span>centre principale: Los Alamos, Oak Ridge, Hanford</span></li>
+              <li><strong>125.000+</strong><span>persoane implicate la vârful proiectului</span></li>
+              <li><strong>16 iulie 1945</strong><span>testul Trinity</span></li>
+              <li><strong>6 și 9 august 1945</strong><span>Hiroshima și Nagasaki</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Rezultat -->
-    <div class="my-5">
-        <h2>6. Rezultatul final</h2>
-        <p class="fs-5">
-        În 1945, testul nuclear :contentReference[oaicite:10]{index=10} a demonstrat succesul proiectului. Ulterior, bombele atomice au fost utilizate asupra orașelor :contentReference[oaicite:11]{index=11} și :contentReference[oaicite:12]{index=12}, contribuind la încheierea războiului.
-        </p>
+  <main>
+    <section id="overview" class="section-padding">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Introducere</p>
+          <h2>Ce este Proiectul Manhattan?</h2>
+          <p class="section-subtitle">O explicație rapidă, împărțită în trei unghiuri: militar, științific și istoric.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <button class="info-card h-100 text-start" data-card="military">
+              <span class="icon-badge"><i class="fa-solid fa-shield-halved"></i></span>
+              <h3>Program militar secret</h3>
+              <p>Un proiect american, sprijinit de Regatul Unit și Canada, pentru obținerea primei arme nucleare.</p>
+              <span class="read-more">Deschide fișa <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <button class="info-card h-100 text-start" data-card="science">
+              <span class="icon-badge"><i class="fa-solid fa-atom"></i></span>
+              <h3>Proiect științific</h3>
+              <p>A unit fizica nucleară, chimia, metalurgia, ingineria și calculul într-o mobilizare fără precedent.</p>
+              <span class="read-more">Deschide fișa <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <button class="info-card h-100 text-start" data-card="history">
+              <span class="icon-badge"><i class="fa-solid fa-landmark"></i></span>
+              <h3>Moment de ruptură</h3>
+              <p>A influențat finalul războiului, începutul erei nucleare și ordinea internațională postbelică.</p>
+              <span class="read-more">Deschide fișa <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section-padding alt-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Fir istoric</p>
+          <h2>Cronologie interactivă</h2>
+          <p class="section-subtitle">Apasă pe un eveniment pentru a vedea explicația, importanța și sursa recomandată.</p>
+        </div>
+
+        <div class="timeline-layout">
+          <div class="timeline-track" id="timelineTrack" aria-label="Cronologia Proiectului Manhattan"></div>
+          <article class="timeline-detail" id="timelineDetail" data-aos="fade-left">
+            <span class="timeline-detail-date">1938</span>
+            <h3>Descoperirea fisiunii nucleare</h3>
+            <p>Otto Hahn și Fritz Strassmann au identificat fisiunea nucleară, iar Lise Meitner și Otto Frisch au explicat procesul. Această descoperire a transformat energia nucleară din teorie în posibilitate tehnologică.</p>
+            <p class="why"><strong>De ce contează?</strong> Fără fisiune, nu ar fi existat nici reacția în lanț, nici bomba atomică.</p>
+            <a href="https://www.nps.gov/mapr/learn/manhattan-project.htm" target="_blank" rel="noopener" class="source-link">Sursă recomandată <i class="fa-solid fa-up-right-from-square"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="map-section" class="section-padding">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-8" data-aos="fade-up">
+            <p class="eyebrow">Geografie istorică</p>
+            <h2>Harta interactivă a Proiectului Manhattan</h2>
+            <p class="section-subtitle ms-0">Marker-ele arată centrele de cercetare, producție, testare și folosire a bombelor atomice.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end" data-aos="fade-up">
+            <button class="btn btn-outline-warning btn-sm" id="resetMap"><i class="fa-solid fa-crosshairs me-2"></i>Resetează harta</button>
+          </div>
+        </div>
+        <div class="map-shell" data-aos="zoom-in">
+          <div id="manhattanMap" role="application" aria-label="Hartă interactivă cu locațiile Proiectului Manhattan"></div>
+          <aside class="map-info-panel" id="mapInfoPanel">
+            <p class="eyebrow">Locație selectată</p>
+            <h3>Los Alamos</h3>
+            <p>Laboratorul de proiectare și asamblare a armelor nucleare. Aici Oppenheimer a coordonat munca științifică asupra designurilor Little Boy și Fat Man.</p>
+            <small>Apasă pe marker-ele de pe hartă pentru mai multe detalii.</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="board" class="section-padding alt-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Investigație istorică</p>
+          <h2>Peg board: cine a fost implicat?</h2>
+          <p class="section-subtitle">Un panou de tip „detectiv” care leagă oamenii de știință, decidenții politici, militarii și dilemele morale.</p>
+        </div>
+
+        <div class="board-wrap" data-aos="fade-up">
+          <svg class="thread-layer" viewBox="0 0 1200 680" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="220" y1="150" x2="575" y2="105" />
+            <line x1="575" y1="105" x2="945" y2="150" />
+            <line x1="220" y1="150" x2="350" y2="430" />
+            <line x1="575" y1="105" x2="600" y2="430" />
+            <line x1="945" y1="150" x2="850" y2="430" />
+            <line x1="350" y1="430" x2="600" y2="430" />
+            <line x1="600" y1="430" x2="850" y2="430" />
+          </svg>
+          <div class="person-pin pin-oppenheimer" data-person="oppenheimer" tabindex="0" role="button" aria-label="Deschide fișa lui Oppenheimer">
+            <div class="photo-placeholder">O</div><strong>Oppenheimer</strong><span>Los Alamos</span>
+          </div>
+          <div class="person-pin pin-groves" data-person="groves" tabindex="0" role="button" aria-label="Deschide fișa lui Leslie Groves">
+            <div class="photo-placeholder">G</div><strong>Groves</strong><span>Conducere militară</span>
+          </div>
+          <div class="person-pin pin-truman" data-person="truman" tabindex="0" role="button" aria-label="Deschide fișa lui Truman">
+            <div class="photo-placeholder">T</div><strong>Truman</strong><span>Decizie politică</span>
+          </div>
+          <div class="person-pin pin-fermi" data-person="fermi" tabindex="0" role="button" aria-label="Deschide fișa lui Enrico Fermi">
+            <div class="photo-placeholder">F</div><strong>Fermi</strong><span>Chicago Pile-1</span>
+          </div>
+          <div class="person-pin pin-szilard" data-person="szilard" tabindex="0" role="button" aria-label="Deschide fișa lui Leo Szilard">
+            <div class="photo-placeholder">S</div><strong>Szilárd</strong><span>Avertisment & etică</span>
+          </div>
+          <div class="person-pin pin-teller" data-person="teller" tabindex="0" role="button" aria-label="Deschide fișa lui Edward Teller">
+            <div class="photo-placeholder">Te</div><strong>Teller</strong><span>Fizică teoretică</span>
+          </div>
+          <div class="person-pin pin-roosevelt" data-person="roosevelt" tabindex="0" role="button" aria-label="Deschide fișa lui Roosevelt">
+            <div class="photo-placeholder">R</div><strong>Roosevelt</strong><span>Inițiere politică</span>
+          </div>
+          <div class="board-note note-1">Emigranții europeni au adus în SUA competență științifică crucială.</div>
+          <div class="board-note note-2">Întrebare-cheie: succes științific sau catastrofă morală?</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="science" class="section-padding">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Știința proiectului</p>
+          <h2>Cum s-a transformat fizica în tehnologie militară?</h2>
+          <p class="section-subtitle">Explicații conceptuale, fără detalii tehnice sensibile.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="reaction-simulator h-100">
+              <h3>Simulator vizual: reacția în lanț</h3>
+              <p>Apasă pe neutron pentru a vedea ideea de multiplicare a reacției. Este o reprezentare educațională simplificată.</p>
+              <div class="reaction-area" id="reactionArea">
+                <button class="neutron" id="startReaction" aria-label="Pornește reacția în lanț">n</button>
+              </div>
+              <button class="btn btn-warning mt-3" id="resetReaction">Resetează</button>
+            </div>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="tech-tabs h-100">
+              <ul class="nav nav-pills mb-3" id="scienceTabs" role="tablist">
+                <li class="nav-item" role="presentation"><button class="nav-link active" id="fission-tab" data-bs-toggle="pill" data-bs-target="#fission" type="button" role="tab">Fisiune</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="uranium-tab" data-bs-toggle="pill" data-bs-target="#uranium" type="button" role="tab">Uraniu</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="plutonium-tab" data-bs-toggle="pill" data-bs-target="#plutonium" type="button" role="tab">Plutoniu</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="bombs-tab" data-bs-toggle="pill" data-bs-target="#bombs" type="button" role="tab">Little Boy vs Fat Man</button></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="fission" role="tabpanel">
+                  <h3>Fisiunea nucleară</h3>
+                  <p>Fisiunea înseamnă ruperea unui nucleu greu în fragmente mai ușoare, cu eliberare de energie și neutroni. Dacă neutronii eliberați produc noi fisiuni, apare reacția în lanț.</p>
+                </div>
+                <div class="tab-pane fade" id="uranium" role="tabpanel">
+                  <h3>Calea uraniului</h3>
+                  <p>Oak Ridge a produs uraniu îmbogățit, necesar bombei Little Boy. Marea dificultate era separarea izotopului U-235 din uraniul natural.</p>
+                </div>
+                <div class="tab-pane fade" id="plutonium" role="tabpanel">
+                  <h3>Calea plutoniului</h3>
+                  <p>Hanford a produs plutoniu în reactoare industriale. Acest material a fost folosit pentru dispozitivul Trinity și bomba Fat Man.</p>
+                </div>
+                <div class="tab-pane fade" id="bombs" role="tabpanel">
+                  <h3>Două designuri diferite</h3>
+                  <div class="compare-grid">
+                    <div><strong>Little Boy</strong><span>uraniu-235 · design gun-type · Hiroshima</span></div>
+                    <div><strong>Fat Man</strong><span>plutoniu-239 · design cu implozie · Nagasaki</span></div>
+                  </div>
+                  <p class="mt-3">Diferența majoră a fost că plutoniul impunea un mecanism cu implozie, mult mai dificil de proiectat și testat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="section-padding alt-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Rezultat și moștenire</p>
+          <h2>Hiroshima, Nagasaki și începutul erei nucleare</h2>
+          <p class="section-subtitle">O prezentare sobră a efectelor imediate și a consecințelor pe termen lung.</p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6" data-aos="fade-up">
+            <article class="city-card h-100">
+              <div class="city-date">6 august 1945</div>
+              <h3>Hiroshima</h3>
+              <p><strong>Bombă:</strong> Little Boy, cu uraniu-235.</p>
+              <p>Orașul a fost devastat, iar estimările oficiale locale indică aproximativ 140.000 de morți până la sfârșitul anului 1945.</p>
+              <a href="https://www.city.hiroshima.lg.jp/english/peace/1029920/1009857.html" target="_blank" rel="noopener">Sursă Hiroshima <i class="fa-solid fa-up-right-from-square"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article class="city-card h-100">
+              <div class="city-date">9 august 1945</div>
+              <h3>Nagasaki</h3>
+              <p><strong>Bombă:</strong> Fat Man, cu plutoniu-239.</p>
+              <p>Sursa oficială a orașului indică 73.884 de morți și 74.909 răniți până la finalul anului 1945.</p>
+              <a href="https://nagasakipeace.jp/en/reference/materials/kids/higai.html" target="_blank" rel="noopener">Sursă Nagasaki <i class="fa-solid fa-up-right-from-square"></i></a>
+            </article>
+          </div>
+        </div>
+
+        <div class="legacy-grid" data-aos="fade-up">
+          <div><i class="fa-solid fa-globe"></i><h3>Războiul Rece</h3><p>Cursa înarmărilor nucleare a devenit una dintre axele principale ale politicii mondiale.</p></div>
+          <div><i class="fa-solid fa-scale-balanced"></i><h3>Tratate</h3><p>Au apărut instituții și acorduri pentru controlul armelor și neproliferare.</p></div>
+          <div><i class="fa-solid fa-bolt"></i><h3>Energie civilă</h3><p>Experiența reactoarelor a contribuit la dezvoltarea energiei nucleare civile.</p></div>
+          <div><i class="fa-solid fa-flask"></i><h3>Big Science</h3><p>Modelul colaborării stat–universități–industrie a influențat proiectele științifice moderne.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ethics" class="section-padding">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Dilema morală</p>
+          <h2>Ce ai fi decis în 1945?</h2>
+          <p class="section-subtitle">Un exercițiu de gândire istorică bazat pe opțiuni discutate în epocă.</p>
+        </div>
+
+        <div class="decision-panel" data-aos="fade-up">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h3>Alege o opțiune</h3>
+              <div class="d-grid gap-3" id="decisionOptions">
+                <button class="decision-btn" data-decision="demo">Demonstrație publică pe o zonă nelocuită</button>
+                <button class="decision-btn" data-decision="direct">Folosire militară directă</button>
+                <button class="decision-btn" data-decision="wait">Așteptarea capitulării / presiune diplomatică</button>
+                <button class="decision-btn" data-decision="warning">Avertisment explicit înainte de folosire</button>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <article class="decision-result" id="decisionResult">
+                <p class="eyebrow">Analiză</p>
+                <h3>Selectează o opțiune</h3>
+                <p>Vei vedea ce argumente istorice pot fi legate de alegerea respectivă. Scopul nu este să ofere un răspuns simplu, ci să arate complexitatea deciziei.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-6" data-aos="fade-right">
+            <div class="argument-card pro">
+              <h3>Argumente folosite pentru justificare</h3>
+              <ul>
+                <li>grăbirea sfârșitului războiului;</li>
+                <li>evitarea unei invazii terestre a Japoniei;</li>
+                <li>efect psihologic decisiv;</li>
+                <li>demonstrarea noii puteri militare.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <div class="argument-card contra">
+              <h3>Argumente critice</h3>
+              <ul>
+                <li>victime civile uriașe;</li>
+                <li>posibilitatea unei demonstrații;</li>
+                <li>Petiția Szilárd și Raportul Franck;</li>
+                <li>începutul cursei înarmărilor nucleare.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="section-padding alt-section">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <p class="eyebrow">Bibliografie</p>
+          <h2>Surse și arhivă digitală</h2>
+          <p class="section-subtitle">Surse primare, secundare și vizuale pentru verificare și documentare.</p>
+        </div>
+
+        <div class="sources-box" data-aos="fade-up">
+          <ul class="nav nav-tabs" id="sourceTabs" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#primary" type="button" role="tab">Surse primare</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#secondary" type="button" role="tab">Surse secundare</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#visuals" type="button" role="tab">Imagini și hărți</button></li>
+          </ul>
+          <div class="tab-content pt-4">
+            <div class="tab-pane fade show active" id="primary" role="tabpanel">
+              <div class="source-list" id="primarySources"></div>
+            </div>
+            <div class="tab-pane fade" id="secondary" role="tabpanel">
+              <div class="source-list" id="secondarySources"></div>
+            </div>
+            <div class="tab-pane fade" id="visuals" role="tabpanel">
+              <div class="source-list" id="visualSources"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+      <div>
+        <strong>Proiectul Manhattan</strong>
+        <p class="mb-0 small text-secondary">Prototip web interactiv pentru ISDV 2026 · Secțiunea Istorie – Pagini Web.</p>
+      </div>
+      <div class="small text-secondary">HTML · CSS · JavaScript · Bootstrap · Leaflet</div>
     </div>
+  </footer>
 
+  <div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="contentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content dossier-modal">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="contentModalTitle">Titlu</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Închide"></button>
+        </div>
+        <div class="modal-body" id="contentModalBody"></div>
+      </div>
     </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <div class="container-fluid p-4 bg-subtitle my-5">
-    <h1 class="text-center text-light fs-1">Simulare interactivă</h1>
-    </div>
-
-    <div class="container my-5">
-    <div class="card p-4 shadow-lg" id="simulator">
-        <h2 id="sim-title" class="text-center mb-3"></h2>
-
-        <p><strong>Context istoric:</strong></p>
-        <p id="sim-context"></p>
-
-        <p class="mt-4"><strong>Decizia dumneavoastră:</strong></p>
-        <div id="sim-choices"></div>
-
-        <div id="sim-progress" class="mt-3 text-muted"></div>
-    </div>
-    </div>
-
-    <div class="container-fluid p-4 bg-subtitle my-5">
-    <h1 class="text-center text-light fs-1">Hartă interactivă</h1>
-    </div>
-
-    <div class="container my-5">
-    <div id="map" style="height: 500px; border-radius: 15px;"></div>
-    </div>
-
-    <script src="app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

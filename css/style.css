@@ -636,3 +636,131 @@ button { font: inherit; }
   .source-archive { grid-template-columns: 1fr; }
   .animation-header { flex-direction: column; align-items: flex-start; }
 }
+
+
+/* =============================
+   MOBILE NAV / HERO FIXES
+   Fix pentru overflow orizontal pe mobil + navbar care acoperă titlul din hero.
+   ============================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  position: relative;
+}
+
+img,
+svg,
+iframe,
+video {
+  max-width: 100%;
+}
+
+.glass-nav .container {
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: calc(100vw - 92px);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.brand-text {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-toggler {
+  flex: 0 0 auto;
+  margin-left: .5rem;
+}
+
+.navbar-collapse {
+  min-width: 0;
+}
+
+.hero-section .container,
+.hero-section .row,
+.hero-section [class*="col-"] {
+  min-width: 0;
+}
+
+@media (max-width: 576px) {
+  .glass-nav {
+    padding-top: .45rem;
+    padding-bottom: .45rem;
+  }
+
+  .navbar-brand {
+    max-width: calc(100vw - 88px);
+    font-size: .98rem;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+    flex: 0 0 auto;
+    font-size: .72rem;
+  }
+
+  .navbar-toggler {
+    padding: .25rem .55rem;
+  }
+
+  .hero-section {
+    min-height: 100svh;
+    align-items: flex-start !important;
+    padding-top: 104px;
+    padding-bottom: 56px;
+  }
+
+  .hero-section .row.min-vh-100 {
+    min-height: auto !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.55rem, 14.5vw, 3.35rem);
+    line-height: .96;
+    max-width: 100%;
+    overflow-wrap: normal;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-radar {
+    right: -260px;
+    top: 80px;
+    opacity: .45;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-text {
+    max-width: 150px;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.35rem, 13.8vw, 2.9rem);
+  }
+}

@@ -150,16 +150,15 @@ const people = {
 const radialInfo = {
   physics: ["Fizică nucleară", "A explicat fisiunea, reacția în lanț și condițiile necesare pentru atingerea masei critice."],
   chemistry: ["Chimie", "A fost esențială pentru separarea și purificarea plutoniului, mai ales în instalațiile de la Hanford."],
-  metal: ["Metalurgie", "Materialele fisile trebuiau prelucrate în forme precise, cu proprietăți fizice controlate."],
   industry: ["Industrie", "Proiectul a cerut fabrici uriașe, energie electrică, contractori industriali și logistică națională."],
-  military: ["Armată", "Manhattan Engineer District a impus ritmul, secretizarea, securitatea și prioritățile strategice."],
-  politics: ["Politică", "Deciziile Roosevelt și Truman au transformat cercetarea nucleară într-un program de stat și apoi într-o decizie militară."]
+  military: ["Armata", "Manhattan Engineer District a impus secretizarea, securitatea și prioritățile proiectului."],
+  politics: ["Politică", "Deciziile Roosevelt și Truman au transformat cercetarea nucleară într-un program de stat și apoi într-o decizie importantă pentru domeniul apărării."]
 };
 
 const documentNotes = {
   uranium: ["Uraniul", "Uraniul era materialul de interes deoarece izotopul U-235 putea susține o reacție în lanț. Dificultatea era separarea lui din uraniul natural, unde apare în proporție mică."],
   chain: ["Reacția în lanț", "O reacție în lanț apare când neutronii eliberați de o fisiune provoacă alte fisiuni. Dacă procesul se amplifică rapid, energia eliberată devine enormă."],
-  germany: ["Germania nazistă", "Temerea centrală era că Germania, cu cercetători de prim rang și un program nuclear propriu, ar putea ajunge prima la arma atomică. Retrospectiv, programul german s-a dovedit insuficient industrializat, dar acest lucru nu era clar atunci."],
+  germany: ["Germania nazistă", "Temerea centrală era că Germania, cu cercetători de bine pregătiți și un program nuclear propriu, ar putea ajunge prima la arma atomică. În retrospectivă, programul german s-a dovedit ineficient și insuficient industrializat, dar acest lucru nu era clar atunci."],
   roosevelt: ["Franklin D. Roosevelt", "Scrisoarea a transformat o problemă științifică într-o problemă de securitate națională, determinând pași politici care au dus ulterior la Manhattan Engineer District."]
 };
 
@@ -217,10 +216,10 @@ const implosionSteps = [
 ];
 
 const trinityMoments = [
-  ["T - 10", "Asamblarea dispozitivului", "Dispozitivul «Gadget» a fost pregătit ca prototip cu plutoniu bazat pe implozie."],
-  ["T - 5", "Turnul de 30 m", "Dispozitivul a fost ridicat pe un turn în deșertul Jornada del Muerto."],
-  ["T - 2", "Vremea amână testul", "Testul a fost întârziat din cauza condițiilor meteo, un detaliu important pentru cronologia dimineții."],
-  ["T - 0", "Detonarea", "La 16 iulie 1945, în jurul orei 5:30, are loc prima detonare nucleară din istorie."],
+  ["I:", "Asamblarea dispozitivului", "Dispozitivul «Gadget» a fost pregătit ca prototip cu plutoniu bazat pe implozie."],
+  ["II:", "Turnul de 30 m", "Dispozitivul a fost ridicat pe un turn în deșertul Jornada del Muerto."],
+  ["III:", "Vremea amână testul", "Testul a fost întârziat din cauza condițiilor meteo, un detaliu important pentru cronologia dimineții."],
+  ["IV:", "Detonarea", "La 16 iulie 1945, în jurul orei 5:30, are loc prima detonare nucleară din istorie."],
   ["21 kt", "Design validat", "Randamentul istoric oficial este de aproximativ 21 kilotone TNT, validând designul cu implozie folosit apoi la Fat Man."]
 ];
 

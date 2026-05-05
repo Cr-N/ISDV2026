@@ -764,3 +764,90 @@ video {
     font-size: clamp(2.35rem, 13.8vw, 2.9rem);
   }
 }
+
+
+/* =============================
+   MOBILE NAV MENU POLISH
+   Meniu hamburger mai estetic pe mobil/tabletă.
+   ============================= */
+
+.glass-nav .container {
+  position: relative;
+}
+
+@media (max-width: 991.98px) {
+  .glass-nav {
+    background: rgba(8, 12, 18, 0.9);
+  }
+
+  .navbar-toggler {
+    border: 1px solid rgba(245, 197, 66, 0.35);
+    border-radius: 14px;
+    background: rgba(245, 197, 66, 0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 .18rem rgba(245, 197, 66, 0.28);
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 12px;
+    right: 12px;
+    padding: 14px;
+    border-radius: 22px;
+    border: 1px solid rgba(245, 197, 66, 0.24);
+    background:
+      linear-gradient(135deg, rgba(245,197,66,0.08), rgba(255,255,255,0.025)),
+      rgba(10, 15, 23, 0.96);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+    overflow: hidden;
+  }
+
+  .navbar-collapse.collapsing {
+    transition: height .25s ease;
+  }
+
+  .navbar-nav {
+    gap: 6px;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 16px;
+    color: rgba(255,255,255,0.86);
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .navbar-nav .nav-link::after {
+    content: "›";
+    color: var(--gold);
+    font-weight: 900;
+    opacity: .75;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #111 !important;
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: translateX(3px);
+  }
+
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    color: #111;
+  }
+}

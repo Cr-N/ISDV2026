@@ -1,4 +1,5 @@
 .board-filters { margin-bottom: 26px; }
+
 .board-wrap {
   position: relative;
   min-height: 680px;
@@ -11,6 +12,7 @@
     #8b6137;
   box-shadow: var(--shadow), inset 0 0 90px rgba(0,0,0,0.42);
 }
+
 .thread-layer {
   position: absolute;
   inset: 0;
@@ -19,6 +21,7 @@
   z-index: 1;
   pointer-events: none;
 }
+
 .thread-layer line {
   stroke: #c9242e;
   stroke-width: 4;
@@ -26,16 +29,18 @@
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.7));
   transition: .2s ease;
 }
+
 .thread-layer line.thread-active {
   stroke: #ff3344;
   stroke-width: 7;
   opacity: 1;
 }
+
 .person-pin {
   position: absolute;
   z-index: 2;
-  width: 170px;
-  padding: 12px 12px 14px;
+  width: 156px;
+  padding: 10px 10px 12px;
   background: #e7d3a6;
   color: #1a1209;
   border-radius: 6px;
@@ -45,6 +50,7 @@
   transition: .2s ease;
   text-align: center;
 }
+
 .person-pin::before {
   content: "";
   position: absolute;
@@ -56,35 +62,89 @@
   background: #b9141d;
   box-shadow: inset 0 2px 3px rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.4);
 }
-.person-pin:hover, .person-pin:focus, .person-pin.is-highlighted {
+
+.person-pin:hover,
+.person-pin:focus,
+.person-pin.is-highlighted {
   transform: rotate(0deg) scale(1.06);
   outline: 3px solid rgba(245,197,66,0.55);
   z-index: 4;
 }
+
 .person-pin.is-dimmed {
   filter: grayscale(1) brightness(.65);
   opacity: .42;
 }
+
 .photo-placeholder {
+  position: relative;
+  width: 100%;
   height: 92px;
   display: grid;
   place-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
+  overflow: hidden;
+  border-radius: 4px;
   background: linear-gradient(135deg, #2b2b2b, #787878);
   color: #fff;
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 950;
-  filter: grayscale(1);
 }
-.person-pin strong { display: block; font-size: 1rem; }
-.person-pin span { display: block; font-size: .75rem; color: #5d4a2d; }
+
+.photo-placeholder::after {
+  content: attr(data-initial);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.95);
+  font-size: 2rem;
+  font-weight: 950;
+  z-index: 0;
+}
+
+.photo-placeholder img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1) contrast(1.08);
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.person-pin:hover .photo-placeholder img,
+.person-pin:focus .photo-placeholder img,
+.person-pin.is-highlighted .photo-placeholder img {
+  transform: scale(1.05);
+  filter: grayscale(.2) contrast(1.05);
+}
+
+.person-pin strong {
+  display: block;
+  font-size: .95rem;
+  line-height: 1.05;
+}
+
+.person-pin span {
+  display: block;
+  margin-top: 3px;
+  font-size: .72rem;
+  line-height: 1.15;
+  color: #5d4a2d;
+}
+
+/* Poziții desktop. Am păstrat mutarea ta pentru Roosevelt ca să nu se suprapună. */
 .pin-oppenheimer { left: 11%; top: 11%; --angle: -4deg; }
 .pin-groves { left: 48%; top: 5%; --angle: 3deg; }
 .pin-truman { right: 9%; top: 11%; --angle: -2deg; }
 .pin-fermi { left: 22%; bottom: 19%; --angle: 3deg; }
 .pin-szilard { left: 47%; bottom: 19%; --angle: -3deg; }
 .pin-teller { right: 21%; bottom: 19%; --angle: 4deg; }
-.pin-roosevelt { left: 43%; top: 39%; --angle: 1deg; }
+.pin-roosevelt { left: 30%; top: 15%; --angle: 1deg; }
+
 .board-note {
   position: absolute;
   z-index: 3;
@@ -96,11 +156,17 @@
   border-radius: 4px;
   box-shadow: 0 12px 20px rgba(0,0,0,0.28);
 }
+
 .note-1 { left: 4%; bottom: 5%; transform: rotate(2deg); }
 .note-2 { right: 4%; bottom: 5%; transform: rotate(-3deg); }
+
 @media (max-width: 991px) {
-  .board-wrap { min-height: 980px; }
-  .person-pin { width: 145px; }
+  .board-wrap { min-height: 900px; }
+  .person-pin { width: 136px; padding: 9px 9px 10px; }
+  .photo-placeholder { height: 76px; margin-bottom: 7px; }
+  .person-pin strong { font-size: .86rem; }
+  .person-pin span { font-size: .65rem; }
+
   .pin-oppenheimer { left: 6%; top: 7%; }
   .pin-groves { left: 55%; top: 7%; }
   .pin-truman { right: 8%; top: 31%; }
@@ -111,17 +177,66 @@
   .note-1 { left: 5%; bottom: 4%; }
   .note-2 { right: 5%; bottom: 4%; }
 }
+
 @media (max-width: 576px) {
-  .board-wrap { min-height: 1250px; }
-  .person-pin { left: 50% !important; right: auto !important; transform: translateX(-50%) rotate(var(--angle,0deg)); }
-  .person-pin:hover, .person-pin.is-highlighted { transform: translateX(-50%) scale(1.04); }
-  .pin-oppenheimer { top: 4%; }
-  .pin-groves { top: 17%; }
-  .pin-truman { top: 30%; }
-  .pin-roosevelt { top: 43%; }
-  .pin-fermi { bottom: auto; top: 56%; }
-  .pin-szilard { bottom: auto; top: 69%; }
-  .pin-teller { bottom: auto; top: 82%; }
+  .board-wrap {
+    min-height: 1060px;
+    border-width: 7px;
+    border-radius: 22px;
+  }
+
+  .person-pin {
+    left: 50% !important;
+    right: auto !important;
+    width: min(134px, 72vw);
+    padding: 8px 8px 9px;
+    transform: translateX(-50%) rotate(var(--angle,0deg));
+  }
+
+  .person-pin:hover,
+  .person-pin:focus,
+  .person-pin.is-highlighted {
+    transform: translateX(-50%) scale(1.035);
+  }
+
+  .photo-placeholder {
+    height: 66px;
+    margin-bottom: 6px;
+  }
+
+  .photo-placeholder::after {
+    font-size: 1.55rem;
+  }
+
+  .person-pin strong {
+    font-size: .82rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .person-pin span {
+    min-height: 1.35em;
+    font-size: .61rem;
+    line-height: 1.08;
+  }
+
+  .pin-oppenheimer { top: 3.5%; }
+  .pin-groves { top: 16%; }
+  .pin-truman { top: 28.5%; }
+  .pin-roosevelt { top: 41%; }
+  .pin-fermi { bottom: auto; top: 53.5%; }
+  .pin-szilard { bottom: auto; top: 66%; }
+  .pin-teller { bottom: auto; top: 78.5%; }
+
   .thread-layer { display: none; }
   .board-note { display: none; }
+}
+
+@media (max-width: 360px) {
+  .board-wrap { min-height: 1010px; }
+  .person-pin { width: 126px; }
+  .photo-placeholder { height: 58px; }
+  .person-pin strong { font-size: .78rem; }
+  .person-pin span { font-size: .58rem; }
 }

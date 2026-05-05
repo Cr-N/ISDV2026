@@ -2,7 +2,7 @@ const timelineEvents = [
   {
     date: "1938",
     title: "Descoperirea fisiunii nucleare",
-    text: "Otto Hahn și Fritz Strassmann au observat fisiunea, iar Lise Meitner și Otto Frisch au explicat fenomenul. Descoperirea a arătat că energia nucleului putea fi eliberată în cantități uriașe.",
+    text: "Otto Hahn și Fritz Strassmann au descoperit fisiunea, iar Lise Meitner și Otto Frisch au explicat fenomenul. Descoperirea a arătat că energia nucleului putea fi eliberată în cantități uriașe.",
     why: "Este punctul științific de pornire al întregului proiect.",
     source: "https://www.nps.gov/mapr/learn/manhattan-project.htm",
     related: "Domeniu: fizică nucleară"
@@ -10,7 +10,7 @@ const timelineEvents = [
   {
     date: "2 august 1939",
     title: "Scrisoarea Einstein–Szilárd",
-    text: "Leo Szilárd a redactat, iar Albert Einstein a semnat, o scrisoare către Franklin D. Roosevelt care avertiza asupra potențialului militar al uraniului și asupra riscului german.",
+    text: "Leo Szilárd a redactat, iar Albert Einstein a semnat, o scrisoare către Franklin D. Roosevelt care avertiza asupra potențialului militar al uraniului și asupra riscului că Germania lucrază deja la bomba atomică.",
     why: "Transformă o temere științifică într-o problemă de securitate națională.",
     source: "https://ahf.nuclearmuseum.org/ahf/key-documents/einstein-szilard-letter/",
     related: "Conexiuni: Szilárd, Einstein, Roosevelt"
@@ -33,15 +33,15 @@ const timelineEvents = [
   },
   {
     date: "1943",
-    title: "Los Alamos devine laborator central",
-    text: "Oppenheimer coordonează laboratorul unde se proiectează armele nucleare. Aici se reunesc fizicieni, chimiști, ingineri și experți în explozivi.",
+    title: "Los Alamos devine laboratorul central",
+    text: "Oppenheimer coordonează laboratorul unde se proiectează armele nucleare. Aici se reunesc fizicieni, chimiști, ingineri.",
     why: "Los Alamos este nodul intelectual al proiectului.",
     source: "https://www.nps.gov/mapr/learn/manhattan-project.htm",
     related: "Locație: Los Alamos"
   },
   {
     date: "1943–1945",
-    title: "Oak Ridge și Hanford produc materialul fisionabil",
+    title: "Oak Ridge și Hanford produc materialul fisil",
     text: "Oak Ridge se concentrează pe uraniu îmbogățit, iar Hanford pe producția industrială de plutoniu. Cele două centre furnizează materialul necesar armelor.",
     why: "Fără infrastructura industrială, proiectarea teoretică nu ar fi produs o armă reală.",
     source: "https://www.nps.gov/mapr/learn/manhattan-project.htm",
@@ -51,7 +51,7 @@ const timelineEvents = [
     date: "16 iulie 1945",
     title: "Testul Trinity",
     text: "În New Mexico are loc prima detonare nucleară din istorie. Dispozitivul testat, numit Gadget, validează designul cu implozie pe bază de plutoniu.",
-    why: "Confirmă că arma nucleară este funcțională înainte de folosirea ei militară.",
+    why: "Confirmă că arma nucleară este funcțională înainte de folosirea ei efectivă.",
     source: "https://www.osti.gov/opennet/manhattan-project-history/Events/1945/trinity.htm",
     related: "Tehnologie: implozie, plutoniu"
   },
@@ -131,15 +131,15 @@ const people = {
     name: "Edward Teller",
     role: "Fizician teoretician",
     text: "A lucrat în proiect și a devenit ulterior o figură centrală în dezvoltarea bombei cu hidrogen.",
-    contribution: "A contribuit la probleme teoretice din Los Alamos și la direcția ulterioară a armamentului nuclear.",
-    moral: "Teller ilustrează continuitatea dintre Proiectul Manhattan și intensificarea cursei nucleare postbelice.",
+    contribution: "A contribuit la probleme teoretice din Los Alamos.",
+    moral: " Proiectul Manhattan și intensificarea cursei nucleare postbelice.",
     connections: "Conectat cu emigranții europeni, Los Alamos și dezvoltarea ulterioară a armamentului nuclear.",
     source: "https://ahf.nuclearmuseum.org/ahf/profile/edward-teller/"
   },
   roosevelt: {
     name: "Franklin D. Roosevelt",
     role: "Președintele care a inițiat programul",
-    text: "A primit avertismentul Einstein–Szilárd și a aprobat trecerea la un program atomic de amploare în timpul războiului.",
+    text: "A primit scrisoarea Szilárd-Einstein și a aprobat trecerea la un program nuclear de amploare în timpul războiului.",
     contribution: "A creat cadrul politic care a permis colaborarea dintre armată, universități și corporații.",
     moral: "Decizia inițierii proiectului a fost alimentată de teama că Germania nazistă ar putea obține prima arma atomică.",
     connections: "Conectat cu scrisoarea din 1939, mobilizarea statului american și începutul proiectului.",
@@ -173,7 +173,7 @@ const npsMaps = {
     title: "Hanford, Washington",
     src: "https://www.nps.gov/maps/embed.html?mapId=daecca55-af56-4e1f-a9d7-4b96e5744c8d",
     text: "Hanford a fost centrul producției industriale de plutoniu. Reactorul B și instalațiile chimice au făcut posibilă calea plutoniului.",
-    note: "Conectat cu Trinity și Fat Man."
+    note: ""
   },
   losAlamos: {
     title: "Los Alamos, New Mexico",

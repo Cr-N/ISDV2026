@@ -21,8 +21,7 @@ function initTimeline() {
         <h3>${event.title}</h3>
         <p>${event.text}</p>
         <p class="why"><strong>De ce contează?</strong> ${event.why}</p>
-        <p class="connection-chip"><i class="fa-solid fa-link me-2"></i>${event.related}</p>
-        <a href="${event.source}" target="_blank" rel="noopener" class="source-link">Sursă recomandată <i class="fa-solid fa-up-right-from-square"></i></a>
+        <a href="${event.source}" target="_blank" rel="noopener" class="source-link">Sursă <i class="fa-solid fa-up-right-from-square"></i></a>
       `;
     });
     track.appendChild(button);

@@ -10,10 +10,9 @@ function openPerson(personId) {
       <p>${person.text}</p>
       <div class="file-grid">
         <div><strong>Contribuție</strong><span>${person.contribution}</span></div>
-        <div><strong>Dilemă / perspectivă</strong><span>${person.moral}</span></div>
-        <div><strong>Conexiuni</strong><span>${person.connections}</span></div>
+        <div><strong>Perspectivă</strong><span>${person.moral}</span></div>
       </div>
-      <a href="${person.source}" target="_blank" rel="noopener" class="source-link mt-3 d-inline-block">Sursă recomandată <i class="fa-solid fa-up-right-from-square"></i></a>
+      <a href="${person.source}" target="_blank" rel="noopener" class="source-link mt-3 d-inline-block">Sursă <i class="fa-solid fa-up-right-from-square"></i></a>
     </div>
   `;
   bootstrap.Modal.getOrCreateInstance(document.getElementById("contentModal")).show();

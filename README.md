@@ -1,4 +1,4 @@
-# Proiectul Manhattan – Dosar declasificat interactiv (V2)
+# Proiectul Manhattan – Dosar istoric interactiv 
 
 Proiect web HTML/CSS/JavaScript pentru concursul ISDV 2026, secțiunea Istorie – Pagini Web.
 
@@ -23,14 +23,11 @@ Proiect web HTML/CSS/JavaScript pentru concursul ISDV 2026, secțiunea Istorie �
 - Secțiune de limitări și nivel de certitudine.
 - Arhivă digitală filtrabilă pentru surse.
 
-## Librării folosite
+## Librării/Resurse folosite
 
-- Bootstrap 5: layout, navbar, butoane, responsive design.
-- AOS.js: animații discrete la scroll.
-- Font Awesome: iconuri.
-- NPS Maps iframe: hărți oficiale, înlocuind harta Leaflet/OSM care putea primi erori de tip access blocked.
-
-Nu se folosește React/Vue/Angular. Proiectul rămâne clasic: HTML, CSS și JavaScript.
+- Bootstrap 5: layout, navbar, butoane, design responsive .
+- AOS.js.
+- Font Awesome.
 
 ## Structura fișierelor
 

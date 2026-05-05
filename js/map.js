@@ -12,7 +12,6 @@ function initMapHub() {
       <p class="eyebrow">Hartă selectată</p>
       <h3>${item.title}</h3>
       <p>${item.text}</p>
-      <small>${item.note}</small>
     `;
     tabs.forEach(tab => tab.classList.toggle("active", tab.dataset.map === mapId));
   }

@@ -2,7 +2,7 @@
 
 .board-wrap {
   position: relative;
-  min-height: 680px;
+  min-height: 820px;
   border-radius: 28px;
   overflow: hidden;
   border: 10px solid #5b3b20;
@@ -39,15 +39,15 @@
 .person-pin {
   position: absolute;
   z-index: 2;
-  width: 156px;
+  width: 164px;
   padding: 10px 10px 12px;
   background: #e7d3a6;
   color: #1a1209;
-  border-radius: 6px;
+  border-radius: 7px;
   box-shadow: 0 14px 26px rgba(0,0,0,0.35);
   transform: rotate(var(--angle, -2deg));
   cursor: pointer;
-  transition: .2s ease;
+  transition: transform .2s ease, filter .2s ease, opacity .2s ease, outline-color .2s ease;
   text-align: center;
 }
 
@@ -66,7 +66,7 @@
 .person-pin:hover,
 .person-pin:focus,
 .person-pin.is-highlighted {
-  transform: rotate(0deg) scale(1.06);
+  transform: rotate(0deg) scale(1.045);
   outline: 3px solid rgba(245,197,66,0.55);
   z-index: 4;
 }
@@ -76,16 +76,26 @@
   opacity: .42;
 }
 
+/*
+  Important:
+  - înainte foloseam object-fit: cover, care tăia fețele;
+  - acum folosim object-fit: contain + aspect-ratio dinamic setat în board.js;
+  - cardul devine mai înalt pentru portrete și mai compact pentru imagini mai late.
+*/
 .photo-placeholder {
+  --photo-ratio: .78;
   position: relative;
   width: 100%;
-  height: 92px;
+  aspect-ratio: var(--photo-ratio);
   display: grid;
   place-items: center;
   margin-bottom: 9px;
   overflow: hidden;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #2b2b2b, #787878);
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.18);
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.18), rgba(255,255,255,.05)),
+    #2b2b2b;
   color: #fff;
   font-size: 2rem;
   font-weight: 950;
@@ -109,17 +119,23 @@
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
+  padding: 3px;
+  background: linear-gradient(135deg, #202020, #6a6a6a);
   filter: grayscale(1) contrast(1.08);
   transition: transform .25s ease, filter .25s ease;
+}
+
+.photo-placeholder.image-missing {
+  aspect-ratio: 4 / 3;
 }
 
 .person-pin:hover .photo-placeholder img,
 .person-pin:focus .photo-placeholder img,
 .person-pin.is-highlighted .photo-placeholder img {
-  transform: scale(1.05);
-  filter: grayscale(.2) contrast(1.05);
+  transform: scale(1.025);
+  filter: grayscale(.15) contrast(1.05);
 }
 
 .person-pin strong {
@@ -130,19 +146,19 @@
 
 .person-pin span {
   display: block;
-  margin-top: 3px;
-  font-size: .72rem;
+  margin-top: 4px;
+  font-size: .7rem;
   line-height: 1.15;
   color: #5d4a2d;
 }
 
-/* Poziții desktop. Am păstrat mutarea ta pentru Roosevelt ca să nu se suprapună. */
+/* Poziții desktop. Am păstrat mutarea ta pentru Roosevelt. */
 .pin-oppenheimer { left: 11%; top: 11%; --angle: -4deg; }
 .pin-groves { left: 48%; top: 5%; --angle: 3deg; }
 .pin-truman { right: 9%; top: 11%; --angle: -2deg; }
-.pin-fermi { left: 22%; bottom: 19%; --angle: 3deg; }
-.pin-szilard { left: 47%; bottom: 19%; --angle: -3deg; }
-.pin-teller { right: 21%; bottom: 19%; --angle: 4deg; }
+.pin-fermi { left: 22%; bottom: 15%; --angle: 3deg; }
+.pin-szilard { left: 47%; bottom: 15%; --angle: -3deg; }
+.pin-teller { right: 21%; bottom: 15%; --angle: 4deg; }
 .pin-roosevelt { left: 30%; top: 15%; --angle: 1deg; }
 
 .board-note {
@@ -161,47 +177,59 @@
 .note-2 { right: 4%; bottom: 5%; transform: rotate(-3deg); }
 
 @media (max-width: 991px) {
-  .board-wrap { min-height: 900px; }
-  .person-pin { width: 136px; padding: 9px 9px 10px; }
-  .photo-placeholder { height: 76px; margin-bottom: 7px; }
-  .person-pin strong { font-size: .86rem; }
-  .person-pin span { font-size: .65rem; }
+  .board-wrap { min-height: 980px; }
+  .person-pin { width: 150px; padding: 9px 9px 10px; }
+  .person-pin strong { font-size: .88rem; }
+  .person-pin span { font-size: .64rem; }
 
   .pin-oppenheimer { left: 6%; top: 7%; }
   .pin-groves { left: 55%; top: 7%; }
   .pin-truman { right: 8%; top: 31%; }
   .pin-roosevelt { left: 10%; top: 31%; }
-  .pin-fermi { left: 7%; bottom: 28%; }
-  .pin-szilard { left: 40%; bottom: 28%; }
-  .pin-teller { right: 7%; bottom: 28%; }
+  .pin-fermi { left: 7%; bottom: 22%; }
+  .pin-szilard { left: 40%; bottom: 22%; }
+  .pin-teller { right: 7%; bottom: 22%; }
   .note-1 { left: 5%; bottom: 4%; }
   .note-2 { right: 5%; bottom: 4%; }
 }
 
+/*
+  Mobil: board-ul devine grid, nu mai folosim poziții absolute.
+  Astfel cardurile pot fi mai înalte după imagine și nu mai taie numele/rolul.
+*/
 @media (max-width: 576px) {
   .board-wrap {
-    min-height: 1060px;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 18px;
     border-width: 7px;
     border-radius: 22px;
+    overflow: visible;
   }
 
   .person-pin {
-    left: 50% !important;
+    position: relative;
+    left: auto !important;
     right: auto !important;
-    width: min(134px, 72vw);
-    padding: 8px 8px 9px;
-    transform: translateX(-50%) rotate(var(--angle,0deg));
+    top: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    max-width: 176px;
+    min-width: 0;
+    justify-self: center;
+    transform: rotate(var(--angle,0deg));
   }
 
   .person-pin:hover,
   .person-pin:focus,
   .person-pin.is-highlighted {
-    transform: translateX(-50%) scale(1.035);
+    transform: scale(1.025);
   }
 
   .photo-placeholder {
-    height: 66px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
   }
 
   .photo-placeholder::after {
@@ -209,34 +237,29 @@
   }
 
   .person-pin strong {
-    font-size: .82rem;
+    font-size: .84rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .person-pin span {
-    min-height: 1.35em;
+    min-height: 2.2em;
     font-size: .61rem;
-    line-height: 1.08;
+    line-height: 1.1;
   }
-
-  .pin-oppenheimer { top: 3.5%; }
-  .pin-groves { top: 16%; }
-  .pin-truman { top: 28.5%; }
-  .pin-roosevelt { top: 41%; }
-  .pin-fermi { bottom: auto; top: 53.5%; }
-  .pin-szilard { bottom: auto; top: 66%; }
-  .pin-teller { bottom: auto; top: 78.5%; }
 
   .thread-layer { display: none; }
   .board-note { display: none; }
 }
 
 @media (max-width: 360px) {
-  .board-wrap { min-height: 1010px; }
-  .person-pin { width: 126px; }
-  .photo-placeholder { height: 58px; }
-  .person-pin strong { font-size: .78rem; }
-  .person-pin span { font-size: .58rem; }
+  .board-wrap {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .person-pin {
+    max-width: 185px;
+  }
 }

@@ -18,7 +18,30 @@ function openPerson(personId) {
   bootstrap.Modal.getOrCreateInstance(document.getElementById("contentModal")).show();
 }
 
+function syncPegboardImageRatios() {
+  document.querySelectorAll(".photo-placeholder img").forEach(img => {
+    const applyRatio = () => {
+      const holder = img.closest(".photo-placeholder");
+      if (!holder || !img.naturalWidth || !img.naturalHeight) return;
+
+      const rawRatio = img.naturalWidth / img.naturalHeight;
+      const safeRatio = Math.min(1.15, Math.max(0.68, rawRatio));
+      holder.style.setProperty("--photo-ratio", safeRatio.toFixed(3));
+      holder.classList.add("image-loaded");
+    };
+
+    if (img.complete) applyRatio();
+    img.addEventListener("load", applyRatio, { once: false });
+    img.addEventListener("error", () => {
+      const holder = img.closest(".photo-placeholder");
+      if (holder) holder.classList.add("image-missing");
+    });
+  });
+}
+
 function initBoard() {
+  syncPegboardImageRatios();
+
   const pins = document.querySelectorAll(".person-pin");
   const threads = document.querySelectorAll(".thread-layer line");
 

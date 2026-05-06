@@ -82,7 +82,6 @@ function initTechTree() {
       document.querySelectorAll(".tech-node").forEach(n => n.classList.remove("active"));
       node.classList.add("active");
       panel.innerHTML = `
-        <p class="eyebrow">Nod tehnologic</p>
         <h3>${title}</h3>
         <p>${text}</p>
       `;
@@ -219,19 +218,19 @@ function initTribunal() {
 
   function update() {
     let title = "Poziție mixtă";
-    let body = "Ai selectat argumente din ambele tabere. Aceasta reflectă complexitatea reală a dezbaterii istorice.";
-    if (selected.pro > selected.contra + 1) {
-      title = "Apropiat de logica decidenților militari și politici";
+    let body = "Ai selectat argumente din ambele tabere. Aceasta arată complexitatea reală a dezbaterii.";
+    if (selected.pro > selected.contra ) {
+      title = "Cei din sectorul militari și politic.";
       body = "Selecția ta pune accent pe încheierea rapidă a războiului și pe efectul strategic al bombei.";
-    } else if (selected.contra > selected.pro + 1) {
-      title = "Apropiat de cercetătorii critici";
-      body = "Selecția ta pune accent pe costul uman, alternativa demonstrației și riscul unei curse nucleare.";
+    } else if (selected.contra > selected.pro) {
+      title = "Cercetătorii care critică folosirea bombei.";
+      body = "Selecția ta pune accent pe costul uman, alternativa demonstrației și riscul unei curse a înarmării nucleare.";
     } else if (selected.pro === 0 && selected.contra === 0) {
       title = "Selectează argumente";
-      body = "Alege argumente din ambele coloane. Site-ul va interpreta poziția ta ca exercițiu istoric, nu moral absolut.";
+      body = "Alege argumente din ambele coloane.";
     }
     result.innerHTML = `
-      <p class="eyebrow">Verdict provizoriu</p>
+      <p class="eyebrow">Te asemeni cu:</p>
       <h3>${title}</h3>
       <p>${body}</p>
       <p class="mb-0"><strong>Scor argumentativ:</strong> ${selected.pro} pro / ${selected.contra} critic</p>
@@ -256,7 +255,6 @@ function renderSourceArchive(filter = "all") {
     <article class="source-card">
       <div class="source-tags">${item.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
       <h3>${item.title}</h3>
-      <p>${item.desc}</p>
       <p class="used-in"><strong>Folosită în secțiunea:</strong> ${item.section}</p>
       <a href="${item.url}" target="_blank" rel="noopener">Deschide sursa <i class="fa-solid fa-up-right-from-square"></i></a>
     </article>

@@ -87,7 +87,7 @@ const people = {
     role: "Director științific la Los Alamos",
     text: "A coordonat laboratorul în care au fost proiectate și integrate armele nucleare. Rolul său a fost atât științific, cât și organizațional.",
     contribution: "Recrutarea elitelor științifice, coordonarea designului armelor și integrarea cercetării teoretice cu ingineria practică.",
-    moral: "După război a devenit una dintre figurile centrale ale dezbaterii despre responsabilitatea savantului.",
+    moral: "Oppenheimer a remarcat mai târziu că rezultatul final îi amintește de cuvintele din Bhagavad-Gita: \„Acum sunt prefăcut în Moarte, distrugătorul lumilor.\” După război, Oppenheimer a devenit președinte al influentului Comitet General Consultativ al nou-înființatei Comisii pentru Energie Atomică din Statele Unite.",
     connections: "Conectat cu Groves, Los Alamos, Trinity, dezbaterea morală postbelică.",
     source: "https://ahf.nuclearmuseum.org/ahf/profile/j-robert-oppenheimer/"
   },
@@ -96,7 +96,7 @@ const people = {
     role: "Director militar al Proiectului Manhattan",
     text: "A controlat construcțiile, securitatea, prioritățile industriale și managementul întregului proiect.",
     contribution: "A coordonat relația dintre armată, corporații, universități și laboratoare secrete.",
-    moral: "Reprezintă dimensiunea militar-administrativă a proiectului: eficiență, secretizare și obiectiv strategic.",
+    moral: "Leslie Groves a privit Proiectul Manhattan ca ceva esențial pentru câștigarea războiului împotriva Germaniei naziste. Pentru el, succesul depindea de disciplină militară, organizare industrială și secretizarea proiectului.",
     connections: "Conectat cu Oak Ridge, Hanford, Los Alamos și decizia de transformare rapidă a cercetării în armă.",
     source: "https://ahf.nuclearmuseum.org/ahf/profile/leslie-r-groves/"
   },
@@ -105,34 +105,34 @@ const people = {
     role: "Președinte al SUA în 1945",
     text: "A moștenit proiectul după moartea lui Roosevelt și a aprobat folosirea bombelor asupra Japoniei.",
     contribution: "A primit informațiile despre proiect în aprilie 1945 și a luat decizia politică finală privind folosirea armelor.",
-    moral: "Este figura politică legată de responsabilitatea folosirii bombei, nu de crearea ei tehnică.",
+    moral: "Harry S. Truman a privit Proiectul Manhattan ca pe o armă capabilă să încheie rapid războiul cu Japonia și să evite o invazie terestră extrem de costisitoare",
     connections: "Conectat cu Hiroshima, Nagasaki, Potsdam și decizia politică finală.",
     source: "https://www.trumanlibrary.gov/museum/presidential-years/decision-to-drop-the-bomb"
   },
   fermi: {
     name: "Enrico Fermi",
     role: "Fizician; coordonator Chicago Pile-1",
-    text: "A condus prima reacție nucleară controlată autosusținută și a contribuit la dezvoltarea reactoarelor.",
-    contribution: "Chicago Pile-1 a demonstrat controlul reacției în lanț și a deschis drumul producerii plutoniului în reactoare.",
-    moral: "Fermi reprezintă transferul cercetării fundamentale către aplicații tehnice cu implicații istorice enorme.",
+    text: "A fost unul dintre cei mai importanți fizicieni ai Proiectului Manhattan și liderul echipei care a realizat prima reacție nucleară controlată.",
+    contribution: "Chicago Pile-1 a demonstrat că reacția nucleară în lanț putea fi controlată și utilizată pentru producerea plutoniului în reactoare.",
+    moral: "Fermi simbolizează transformarea cercetării teoretice în tehnologie militară cu impact global și consecințe istorice majore.",
     connections: "Conectat cu Chicago, Hanford, fizica reactoarelor și producția de plutoniu.",
     source: "https://ahf.nuclearmuseum.org/ahf/profile/enrico-fermi/"
   },
   szilard: {
     name: "Leo Szilárd",
     role: "Fizician; avertisment nuclear și critic moral",
-    text: "A avut un rol crucial în Scrisoarea Einstein–Szilárd și ulterior în Petiția Szilárd, care cerea evitarea folosirii surpriză a bombei.",
-    contribution: "A formulat ideea reacției nucleare în lanț și a contribuit decisiv la alertarea administrației Roosevelt.",
-    moral: "Este una dintre vocile centrale ale opoziției morale față de folosirea surpriză a bombei asupra Japoniei.",
+    text: "A fost unul dintre primii oameni de știință care au înțeles potențialul armelor nucleare și a avertizat guvernul american asupra pericolului unei bombe naziste.",
+    contribution: "A formulat conceptul reacției nucleare în lanț și a contribuit la inițierea Proiectului Manhattan prin Scrisoarea Einstein–Szilárd.",
+    moral: "După dezvoltarea bombei, a devenit una dintre cele mai importante voci împotriva folosirii ei asupra Japoniei fără avertisment prealabil.",
     connections: "Conectat cu Einstein, Roosevelt, Chicago și dezbaterea etică.",
     source: "https://ahf.nuclearmuseum.org/ahf/key-documents/szilard-petition/"
   },
   teller: {
     name: "Edward Teller",
     role: "Fizician teoretician",
-    text: "A lucrat în proiect și a devenit ulterior o figură centrală în dezvoltarea bombei cu hidrogen.",
-    contribution: "A contribuit la probleme teoretice din Los Alamos.",
-    moral: " Proiectul Manhattan și intensificarea cursei nucleare postbelice.",
+    text: "A susținut dezvoltarea armelor nucleare ca mijloc de descurajare și a devenit ulterior cunoscut drept „părintele bombei cu hidrogen”.",
+    contribution: "A lucrat la cercetări teoretice în Los Alamos și a promovat dezvoltarea armelor termonucleare după război.",
+    moral: "Considera superioritatea nucleară esențială pentru siguranța Statelor Unite, chiar dacă acest lucru a intensificat cursa înarmărilor.",
     connections: "Conectat cu emigranții europeni, Los Alamos și dezvoltarea ulterioară a armamentului nuclear.",
     source: "https://ahf.nuclearmuseum.org/ahf/profile/edward-teller/"
   },
@@ -148,9 +148,9 @@ const people = {
 };
 
 const radialInfo = {
-  physics: ["Fizică nucleară", "A explicat fisiunea, reacția în lanț și condițiile necesare pentru atingerea masei critice."],
+  physics: ["Fizică nucleară", "A explicat fisiunea, reacția în lanț și condițiile necesare pentru atingerea masei critice. "],
   chemistry: ["Chimie", "A fost esențială pentru separarea și purificarea plutoniului, mai ales în instalațiile de la Hanford."],
-  industry: ["Industrie", "Proiectul a cerut fabrici uriașe, energie electrică, contractori industriali și logistică națională."],
+  industry: ["Industrie", "Proiectul a cerut fabrici uriașe, energie electrică și logistică națională."],
   military: ["Armata", "Manhattan Engineer District a impus secretizarea, securitatea și prioritățile proiectului."],
   politics: ["Politică", "Deciziile Roosevelt și Truman au transformat cercetarea nucleară într-un program de stat și apoi într-o decizie importantă pentru domeniul apărării."]
 };
@@ -172,13 +172,13 @@ const npsMaps = {
   hanford: {
     title: "Hanford, Washington",
     src: "https://www.nps.gov/maps/embed.html?mapId=daecca55-af56-4e1f-a9d7-4b96e5744c8d",
-    text: "Hanford a fost centrul producției industriale de plutoniu. Reactorul B și instalațiile chimice au făcut posibilă calea plutoniului.",
+    text: "Hanford a fost centrul producției industriale de plutoniu. Reactorul B și instalațiile chimice au făcut posibilă producerea plutoniului.",
     note: ""
   },
   losAlamos: {
     title: "Los Alamos, New Mexico",
     src: "https://www.nps.gov/maps/embed.html?mapId=3ebb4ae9-6c66-4305-951e-dd9012d15ff6",
-    text: "Los Alamos a fost laboratorul central de proiectare și asamblare a armelor, sub conducerea științifică a lui Oppenheimer.",
+    text: "Los Alamos a fost laboratorul central de proiectare și asamblare a armelor, sub conducerea științifică a lui J. Robert Oppenheimer.",
     note: "Conectat cu designurile Little Boy, Fat Man și testul Trinity."
   },
   oakRidge: {
@@ -191,10 +191,10 @@ const npsMaps = {
 
 const techInfo = {
   cp1: ["Chicago Pile-1", "Prima reacție nucleară controlată autosusținută a demonstrat că reacția în lanț putea fi controlată și exploatată tehnic."],
-  uranium: ["U-235", "Calea uraniului cerea separarea izotopului U-235 din uraniul natural. A fost dificilă industrial, dar designul final al bombei era relativ mai simplu."],
-  plutonium: ["Pu-239", "Plutoniul putea fi produs în reactoare, dar proprietățile sale au făcut imposibil un design simplu de tip gun-type."],
+  uranium: ["U-235", "Utilizarea uraniului ca material fisil cerea separarea izotopului U-235 din uraniul natural. A fost dificilă industrial, dar designul final al bombei era relativ mai simplu."],
+  plutonium: ["Pu-239", "Plutoniul putea fi produs în reactoare, dar proprietățile sale au făcut imposibil un design simplu de tip gun-type de aceea a necesitat implementarea designului pe baza de implozie."],
   oak: ["Oak Ridge", "A folosit simultan mai multe metode de îmbogățire, deoarece nimeni nu era sigur care va funcționa suficient de repede la scară industrială."],
-  hanford: ["Hanford", "A transformat principiul reactorului în producție industrială de plutoniu, folosind Reactorul B și extracție chimică."],
+  hanford: ["Hanford", "A produs la un nivel industrial plutoniu, folosind Reactorul B și extracție chimică."],
   littleBoy: ["Little Boy", "Bomba cu uraniu folosită la Hiroshima. Designul de tip gun-type nu a fost testat nuclear înainte, fiind considerat mai sigur tehnic."],
   trinity: ["Trinity / Fat Man", "Designul cu implozie a fost testat la Trinity și apoi folosit pentru Fat Man la Nagasaki."]
 };
@@ -202,25 +202,25 @@ const techInfo = {
 const gunSteps = [
   "Două mase subcritice de uraniu-235 sunt separate.",
   "Un mecanism de tip «tun» accelerează o masă spre cealaltă.",
-  "Cele două piese se unesc și formează o masă supercritică.",
+  "Cele două mase de uraniu se unesc și formează o masă supercritică.",
   "Reacția în lanț se amplifică rapid.",
-  "Se eliberează o cantitate uriașă de energie."
+  "Se eliberează o cantitate uriașă de energie. Acest design era dovedit că funcționează, fiind unul simplu, așa că a fost implementat pe bomba Little Boy."
 ];
 
 const implosionSteps = [
-  "Explozivi convenționali sunt dispuși simetric în jurul miezului de plutoniu.",
-  "Undele de șoc trebuie sincronizate cu mare precizie.",
+  "Explozivi convenționali sunt dispuși concentric în jurul miezului de plutoniu.",
+  "Explozibilul este detonat.",
   "Miezul de plutoniu este comprimat spre centru.",
   "Compresia produce o stare supercritică.",
-  "Designul este validat la Trinity și folosit pentru Fat Man."
+  "Se eliberează o cantitate uriașă de energie. Acest design a fost testat inițial la Trinity Site și apoi folosit la bomba Fat Man."
 ];
 
 const trinityMoments = [
-  ["I:", "Asamblarea dispozitivului", "Dispozitivul «Gadget» a fost pregătit ca prototip cu plutoniu bazat pe implozie."],
-  ["II:", "Turnul de 30 m", "Dispozitivul a fost ridicat pe un turn în deșertul Jornada del Muerto."],
-  ["III:", "Vremea amână testul", "Testul a fost întârziat din cauza condițiilor meteo, un detaliu important pentru cronologia dimineții."],
-  ["IV:", "Detonarea", "La 16 iulie 1945, în jurul orei 5:30, are loc prima detonare nucleară din istorie."],
-  ["21 kt", "Design validat", "Randamentul istoric oficial este de aproximativ 21 kilotone TNT, validând designul cu implozie folosit apoi la Fat Man."]
+  ["I", "Asamblarea dispozitivului", "Dispozitivul «Gadget» a fost pregătit ca prototip cu plutoniu bazat pe implozie."],
+  ["II", "Turnul de 30 m", "Dispozitivul a fost ridicat pe un turn în deșertul Jornada del Muerto."],
+  ["III", "Vremea amână testul", "Testul a fost întârziat din cauza condițiilor meteo, un detaliu important pentru cronologia dimineții."],
+  ["IV", "Detonarea", "La 16 iulie 1945, în jurul orei 5:30, are loc prima detonare nucleară din istorie."],
+  ["21 kt", "Designul este validat", "Puterea exploziei masura aproximativ 21 kilotone TNT, validând designul cu implozie folosit apoi la Fat Man."]
 ];
 
 const impactData = {
@@ -249,10 +249,10 @@ const impactData = {
 const waveInfo = {
   coldWar: ["Războiul Rece", "Arma nucleară a devenit parte centrală a competiției globale dintre SUA și URSS."],
   armsRace: ["Cursa înarmărilor", "După 1945, statele au urmărit să nu rămână în urmă tehnologic și strategic în domeniul nuclear."],
-  iaea: ["IAEA", "Agenția Internațională pentru Energie Atomică a fost creată în 1957 pe fondul speranțelor și temerilor legate de tehnologia nucleară."],
+  iaea: ["AIEA", "Agenția Internațională pentru Energie Atomică a fost creată în 1957 pe fondul temerilor legate de tehnologia nucleară."],
   npt: ["Tratatul de Neproliferare Nucleară", "Deschis spre semnare în 1968 și intrat în vigoare în 1970, urmărește limitarea răspândirii armelor nucleare."],
-  energy: ["Energie nucleară civilă", "Aceeași infrastructură intelectuală care a produs bomba a contribuit la dezvoltarea reactoarelor pentru energie."],
-  bigScience: ["Big Science", "Proiectul a creat modelul modern al colaborării masive dintre stat, universități, armată și industrie."]
+  energy: ["Energie nucleară civilă", "Aceeași infrastructură care a produs bomba a contribuit la dezvoltarea reactoarelor pentru energie. Spre exemplu metoda difuziei gazoase pentru îmbogățirea uraniului(implementată la Oak Ridge) a fost folosita mult timp după la nivel industrial."],
+  bigScience: ["Big Science", "Proiectul a creat modelul modern al colaborării dintre stat, universități, armată și industrie."]
 };
 
 const sourceArchive = [
@@ -261,15 +261,15 @@ const sourceArchive = [
   { title: "National Security Archive – Szilárd Petition", tags: ["primara", "etica"], section: "Etică", desc: "Versiune arhivistică a documentului și contextului său politic.", url: "https://nsarchive.gwu.edu/document/28456-document-38-e-lapp-leo-szilard-et-al-petition-president-united-states-july-17-1945" },
   { title: "Truman Library – Declarația din 6 august 1945", tags: ["primara", "oficiala"], section: "Hiroshima", desc: "Comunicatul prezidențial care anunță folosirea bombei asupra Hiroshimei.", url: "https://www.trumanlibrary.gov/library/public-papers/93/statement-president-announcing-use-bomb-hiroshima" },
   { title: "OSTI – Trinity Test", tags: ["oficiala", "tehnologie"], section: "Trinity", desc: "Prezentare istorică a testului Trinity din 16 iulie 1945.", url: "https://www.osti.gov/opennet/manhattan-project-history/Events/1945/trinity.htm" },
-  { title: "National Park Service – Manhattan Project", tags: ["oficiala", "harti"], section: "Hartă", desc: "Sinteză oficială despre locurile, oamenii și istoria Proiectului Manhattan.", url: "https://www.nps.gov/mapr/learn/manhattan-project.htm" },
+  { title: "National Park Service – Manhattan Project", tags: ["oficiala", "harti"], section: "Hărți interactive", desc: "Sinteză oficială despre locurile, oamenii și istoria Proiectului Manhattan.", url: "https://www.nps.gov/mapr/learn/manhattan-project.htm" },
   { title: "Department of Energy – Oak Ridge", tags: ["oficiala", "tehnologie"], section: "Desfășurare", desc: "Istoria centrului de îmbogățire a uraniului de la Oak Ridge.", url: "https://www.energy.gov/orem/history" },
   { title: "Los Alamos National Laboratory – Two Bomb Designs", tags: ["oficiala", "tehnologie"], section: "Tehnologie", desc: "Explicații despre cele două designuri de bombe: gun-type și implozie.", url: "https://www.lanl.gov/media/publications/the-vault/1023-a-tale-of-two-bomb-designs" },
   { title: "IAEA – Istorie", tags: ["oficiala"], section: "Impact", desc: "Contextul apariției Agenției Internaționale pentru Energie Atomică.", url: "https://www.iaea.org/about/overview/history" },
   { title: "IAEA – Tratatul de Neproliferare", tags: ["oficiala"], section: "Impact", desc: "Prezentare despre TNP și obiectivele de non-proliferare.", url: "https://www.iaea.org/topics/non-proliferation-treaty" },
-  { title: "City of Hiroshima", tags: ["oficiala", "victime"], section: "Rezultat", desc: "Date oficiale despre victimele și impactul bombardamentului de la Hiroshima.", url: "https://www.city.hiroshima.lg.jp/english/peace/1029920/1009857.html" },
-  { title: "Nagasaki Peace", tags: ["oficiala", "victime"], section: "Rezultat", desc: "Date oficiale despre victimele și impactul bombardamentului de la Nagasaki.", url: "https://nagasakipeace.jp/en/reference/materials/kids/higai.html" },
-  { title: "NPS Map – cele trei locații principale", tags: ["harti", "oficiala"], section: "Hartă", desc: "Hartă interactivă oficială cu cele trei situri principale ale Proiectului Manhattan.", url: "https://www.nps.gov/maps/embed.html?mapId=9b558c7b-d98b-416b-944c-3929de019ddf" },
-  { title: "NPS Map – Hanford", tags: ["harti", "oficiala"], section: "Hartă", desc: "Hartă oficială pentru situl Hanford.", url: "https://www.nps.gov/maps/embed.html?mapId=daecca55-af56-4e1f-a9d7-4b96e5744c8d" },
-  { title: "NPS Map – Los Alamos", tags: ["harti", "oficiala"], section: "Hartă", desc: "Hartă oficială pentru situl Los Alamos.", url: "https://www.nps.gov/maps/embed.html?mapId=3ebb4ae9-6c66-4305-951e-dd9012d15ff6" },
-  { title: "NPS Map – Oak Ridge", tags: ["harti", "oficiala"], section: "Hartă", desc: "Hartă oficială pentru situl Oak Ridge.", url: "https://www.nps.gov/maps/embed.html?mapId=97b8d01b-3da9-45b7-849d-c2e2ceacc027" }
+  { title: "City of Hiroshima", tags: ["oficiala", "victime"], section: "Impact", desc: "Date oficiale despre victimele și impactul bombardamentului de la Hiroshima.", url: "https://www.city.hiroshima.lg.jp/english/peace/1029920/1009857.html" },
+  { title: "Nagasaki Peace", tags: ["oficiala", "victime"], section: "Impact", desc: "Date oficiale despre victimele și impactul bombardamentului de la Nagasaki.", url: "https://nagasakipeace.jp/en/reference/materials/kids/higai.html" },
+  { title: "NPS Map – cele trei locații principale", tags: ["harti", "oficiala"], section: "Hărți interactive", desc: "Hartă interactivă oficială cu cele trei situri principale ale Proiectului Manhattan.", url: "https://www.nps.gov/maps/embed.html?mapId=9b558c7b-d98b-416b-944c-3929de019ddf" },
+  { title: "NPS Map – Hanford", tags: ["harti", "oficiala"], section: "Hărți interactive", desc: "Hartă oficială pentru situl Hanford.", url: "https://www.nps.gov/maps/embed.html?mapId=daecca55-af56-4e1f-a9d7-4b96e5744c8d" },
+  { title: "NPS Map – Los Alamos", tags: ["harti", "oficiala"], section: "Hărți interactive", desc: "Hartă oficială pentru situl Los Alamos.", url: "https://www.nps.gov/maps/embed.html?mapId=3ebb4ae9-6c66-4305-951e-dd9012d15ff6" },
+  { title: "NPS Map – Oak Ridge", tags: ["harti", "oficiala"], section: "Hărți interactive", desc: "Hartă oficială pentru situl Oak Ridge.", url: "https://www.nps.gov/maps/embed.html?mapId=97b8d01b-3da9-45b7-849d-c2e2ceacc027" }
 ];

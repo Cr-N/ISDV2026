@@ -534,7 +534,7 @@ button { font: inherit; }
 .shock-node:hover, .shock-node.active { background: var(--gold); color: #111; transform: scale(1.05); }
 .sw-cold { left: 10%; top: 20%; }
 .sw-arms { right: 12%; top: 18%; }
-.sw-iaea { left: 12%; bottom: 22%; }
+.sw-iaea { left: 12%; bottom: 35%; }
 .sw-npt { right: 14%; bottom: 24%; }
 .sw-energy { left: 43%; top: 9%; }
 .sw-science { left: 42%; bottom: 8%; }

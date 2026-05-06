@@ -1,0 +1,147 @@
+Rezumat
+
+Proiectul Manhattan a fost programul militaro-științific secret prin care Statele Unite, împreună cu Regatul Unit și Canada au dezvoltat primele arme nucleare în timpul celui de-Al Doilea Război Mondial. Scopul lui imediat a fost să transforme fisiunea nucleară dintr-un fenomen de laborator într-o armă funcțională înaintea Germaniei naziste, consecința lui istorică a fost inaugurarea erei nucleare. 
+
+Proiectul a combinat cercetarea fundamentală, industria grea, administrația militară și mobilizarea unei vaste forțe de muncă. Proiectul s-a bazat pe trei centre principale: producția de uraniu îmbogățit la Oak Ridge, producția de plutoniu la Hanford și proiectarea/ansamblarea armelor la Los Alamos. În iulie 1945, testul Trinity a demonstrat funcționarea designului cu implozie, în august 1945, bombele „Little Boy” și „Fat Man” au fost detonate la Hiroshima și Nagasaki. 
+
+Proiectului Manhattan a accelerat cursa înarmărilor nucleare și a determinat ulterior apariția instituțiilor de control nuclear, precum Agenția Internațională pentru Energie Atomică și Tratatul de Neproliferare Nucleară. În același timp, a generat una dintre cele mai persistente dezbateri morale din istoria modernă: poate un progres științific major fi separat de modul în care este folosit? 
+
+Ce este și de ce contează în istorie
+
+Proiectul Manhattan a fost, în esență, un program de cercetare, inginerie și producție militară destinat obținerii materialelor fisile necesare unei arme bombe nucleare. Obiectivele tehnice au fost: demonstrarea și controlul reacției de fisiune în lanț, separarea izotopului uraniu-235 din uraniul natural și producerea plutoniului-239 în reactoare, obiectivul politic a fost obținerea unei arme decisive înainte ca Germania nazistă să poată face același lucru și, ulterior, folosirea noului avantaj strategic în încheierea războiului.
+
+Contează în istorie din cel puțin trei motive. Strategic, a schimbat definitiv războiul și diplomația, introducând posibilitatea distrugerii instantanee la scară urbană. Științific, a unit fizica teoretică, chimia, metalurgia, electronica, balistica și ingineria de proces într-un sistem integrat fără precedent. Social, a creat „orașe secrete”, a deplasat comunități locale, a atras zeci de mii de muncitori într-un efort național uriaș, dar adesea segregat și profund inegal. 
+
+Contextul începerii și persoanele implicate
+
+---Contextul începerii
+
+Contextul imediat al proiectului a fost dublu: descoperirea fisiunii nucleare la sfârșitul anilor 1930 și climatul geopolitic extrem al războiului mondial. Temerea esențială a oamenilor de știință refugiați din Europa era că Germania, care dispunea de cercetători de talia lui Werner Heisenberg și pornise propriul program nuclear în 1939, ar putea construi prima bombă atomică. Deși retros 	pectiv programul german s-a dovedit fragmentar și insuficient industrializat, această concluzie nu era clară în 1942–1944; tocmai incertitudinea a alimentat urgența americană.
+
+Prin Scrisoarea Einstein–Szilárd din august 1939, redactată de Leo Szilárd și semnată de Albert Einstein, l-a avertizat pe președintele Roosevelt asupra potențialului militar al uraniului și asupra riscului ca Germania să ajungă prima la o bombă atomică. În iunie 1942, Roosevelt a aprobat trecerea la un program de amploare controlat de Army Corps of Engineers; la 13 august 1942 a fost creat Manhattan Engineer District, iar la 17 septembrie 1942 conducerea a fost încredințată generalului Leslie Groves.
+
+---Persoanele implicate
+
+- J. Robert Oppenheimer a fost fizicianul teoretician ales de Groves pentru a conduce laboratorul de arme de la Los Alamos; a coordonat recrutarea elitelor științifice și integrarea cercetării teoretice cu problemele practice de proiectare a bombelor. 
+
+- Enrico Fermi refugiat din Italia fascistă și laureat Nobel, a condus experimentul Chicago Pile-1, prima reacție nucleară controlată autosusținută, apoi a contribuit la punerea în funcțiune a reactorului B de la Hanford și a devenit consultant-cheie la Los Alamos.
+
+- Niels Bohr, unul dintre fondatorii fizicii atomice, a fugit din Danemarca în 1943, a lucrat sub pseudonimul „Nicholas Baker” drept consultant la Los Alamos și a devenit ulterior un activist al deschiderii internaționale în probleme nucleare.
+
+- Richard Feynman","physicist a fost recrutat la Los Alamos, unde a lucrat în divizia teoretică a lui Hans Bethe și a contribuit inclusiv la calcule de siguranță pentru stocarea materialelor fisile la Oak Ridge.
+
+- Edward Teller, fizician teoretician originar din Ungaria, a făcut parte din grupul care a împins administrația Roosevelt spre un program atomic și a lucrat la Los Alamos asupra problemelor de implozie, devenind ulterior figura centrală a programului bombei cu hidrogen. 
+
+- Leo Szilard","physicist a formulat încă din 1933 ideea reacției nucleare în lanț, a fost coautorul politic al scrisorii către Roosevelt, redactează în 1945 petiția împotriva utilizării surpriză a bombei asupra Japoniei. 
+
+-  Leslie R. Groves a fost directorul militar al proiectului și omul-cheie al managementului: a controlat construcțiile, securitatea, prioritățile industrial, planificarea utilizării bombei. Fără Groves, Proiectul Manhattan nu s-ar fi putut desfarua la acelasi nivel.
+
+- Franklin D. Roosevelt a transformat inițialul avertisment științific într-o decizie de stat. Administrația sa a recepționat scrisoarea Einstein–Szilárd, a aprobat extinderea programului în 1942 și a creat cadrul politic care a permis colaborarea fără precedent dintre armată, universități și corporații.
+
+- Harry S. Truman a moștenit proiectul după moartea lui Roosevelt, a fost informat asupra lui în aprilie 1945, a urmărit rezultatul Trinity și a aprobat folosirea bombelor asupra Japoniei în august 1945. 
+
+O proporție remarcabilă a elitelor științifice ale proiectului provenea din cercuri academice europene destructurate de fascism și antisemitism: Szilárd, Teller, Wigner, Fermi, Bohr, Bethe, Frisch, Segrè și mulți alții. Exodul științific a transferat capital intelectual din Europa în Statele Unite și a făcut posibilă concentrarea rapidă a competenței necesare creatiei unei arme noi. 
+
+Desfășurarea proiectului
+
+Proiectul Manhattan a fost o adevărată operă de management. Declarația lui Truman din 6 august 1945 vorbea despre 125.000 de angajați la vârful construcției, peste 65.000 în exploatarea curentă și un cost de aproximativ 2 miliarde de dolari ai epocii. Groves a reușit această mobilizare apelând la marile corporații industriale americane — DuPont, Tennessee Eastman, Union Carbide, Westinghouse, General Electric, Stone & Webster și altele, și obținând pentru proiect priorități logistice aproape absolute.
+ 
+
+
+Locatie	Rol	Locație	Activități principale	Personal implicat	Date 
+Los Alamos	Laboratorul de proiectare și asamblare a armelor	New Mexico, SUA	calcule teoretice, dezvoltarea designurilor gun-type și implozie, testare ne-nucleară, asamblare finală	conducere științifică, fizicieni teoreticieni, chimiști, ingineri, exploziviști	laborator creat în 1943; Trinity la 16 iulie 1945
+Oak Ridge	Centru de îmbogățire a uraniului și reactor-pilot	Tennessee, SUA	Y-12 (separare electromagnetică), K-25 (difuzie gazoasă), S-50 (difuzie termică), X-10 (reactor pilot pentru plutoniu)	militari MED, contractori industriali, operatori și tehnicieni, „calutron girls”	teren aprobat în septembrie 1942; instalații majore în construcție până în martie 1943; uraniul pentru Little Boy livrat în 1945
+Hanford	Producție industrială de plutoniu	Washington, SUA	Reactorul B, iradierea uraniului, răcire și extracție chimică a plutoniului	Corps of Engineers, DuPont, operatori de reactoare și instalații chimice	sit selectat în 1943; construcția Reactorului B în octombrie 1943; încărcare combustibil în septembrie 1944; putere completă în februarie 1945
+
+
+
+Etapele proiectului
+
+Pe 2 decembrie 1942, experimentul Chicago Pile-1, condus de Enrico Fermi, a realizat prima reacție nucleară controlată autosusținută; aceasta a fost dovada că energia nucleului putea fi exploatată tehnic și, indirect, că plutoniul putea fi produs în reactoare. Din acest punct, proiectul s-a despărțit în două mari „ramuri” tehnologice: uraniul si plutoniu.
+
+Pentru uraniu, problema centrală era separarea unei cantități utile de U-235 din uraniul natural, unde el există în proporție foarte mică. Oak Ridge a folosit simultan trei metode: electromagnetică, difuzie gazoasă și difuzie termică, tocmai pentru că nimeni nu era sigur care va funcționa la scară industrială și în ce ritm. Pentru plutoniu, X-10 de la Oak Ridge a servit drept reactor-pilot, iar Hanford a transformat modelul în producție de masă. Între timp, la Los Alamos, cercetătorii au descoperit că un design „gun-type” pentru plutoniu era impracticabil, ceea ce a forțat trecerea la designul mult mai complicat prin implozie.
+
+Testul Trinity
+
+“Trinity Site”, New Mexicoa reprezentat culminația tehnică a proiectului. Dispozitivul „Gadget”, un prototip cu plutoniu bazat pe implozie, a fost asamblat la începutul lunii iulie 1945 și ridicat pe un turn de 30 de metri în deșertul Jornada del Muerto. După o amânare din cauza vremii, testul a avut loc în dimineața de 16 iulie 1945, la 5:30, iar estimarea istorică oficială a randamentului a fost de aproximativ 21 kilotone TNT. Reușita testului a validat designul ce urma să fie folosit pentru „Fat Man” și a arătat că bomba cu uraniu, considerată mai simplă, putea fi folosită fără test nuclear prealabil.
+
+Cronologie 
+    1938 : Descoperirea fisiunii nucleare in Germania
+    1939 : Scrisoarea Einstein-Szilard catre Roosevelt
+    1942 : Roosevelt aproba programul extins
+-	Se creeaza Manhattan Engineer District
+-	Chicago Pile-1
+    1943 : Se organizeaza Los Alamos
+-	Incep constructiile la Oak Ridge si Hanford
+    1944 : Reactorul B de la Hanford intra in faza de pornire
+-	Designul cu implozie devine esential pentru plutoniu
+    1945 : 16 iulie - Testul Trinity
+-	 6 august – Hiroshima
+-	9 august – Nagasaki
+-	14 august - Japonia anunta capitularea
+
+Rezultatul final și consecințe
+
+Prima bombă folosită, „Little Boy”, a fost o bombă cu uraniu de tip gun-type, proiectată la Los Alamos și alimentată cu uraniu îmbogățit la Oak Ridge. Ea a fost detonată deasupra Hiroshimei pe 6 august 1945. Estimarea oficială a orașului arată aproximativ 140.000 de morți până la sfârșitul lui decembrie 1945.
+
+A doua bombă, „Fat Man”, a fost o bombă cu plutoniu de tip implozie, bazată pe designul validat la Trinity și alimentată cu plutoniu produs la Hanford. Ea a fost detonată deasupra Nagasaki pe 9 august 1945, la 11:02. Geografia orașului a limitat parțial extinderea undei de șoc dar numărul de victim umane a rămas uriaș: sursa oficială a orașului indică 73.884 de morți și 74.909 răniți până la sfârșitul lui 1945.
+
+Dacă se însumează estimările oficiale de la Hiroshima și Nagasaki, rezultă peste 213.000 de morți până la sfârșitul anului 1945, cifră care explică de ce Proiectul Manhattan rămâne simultan un succes tehnologic și o catastrofă umană.
+
+
+
+
+Impactul pe termen lung
+Pe termen lung, Proiectul Manhattan a „deschis era nucleară”, a schimbat definitiv calculul modul în care este statele percep puterea. Chiar dupa argumentele din 1945 despre utilizarea bombei nucleare, statele au inceput sa isi dezvolte propriile arme pentru a nu fi depasiti tehnologic, bomba nucleara deveniind astfel, o arma strategica pentru orice stat.
+
+Tot din acest proiect s-au născut inițiativele de control și non-proliferare. Agenția Internațională pentru Energie Atomică a fost creată în 1957, în urma temerilor și speranțelor generate de tehnologia nucleară și sub impulsul ideii „Atoms for Peace” din 1953. Tratatul de Neproliferare Nucleară a fost deschis spre semnare în 1968 și a intrat în vigoare la 5 martie 1970; el urmărește simultan prevenirea răspândirii armelor nucleare, cooperarea în utilizările pașnice ale energiei nucleare și dezarmarea. În aceeași temă se înscrie și Tratatul de interzicere parțială a testelor din 1963, care a limitat testele în atmosferă, spațiu și sub apă.
+
+Impactul nu a fost doar militar. Chicago Pile-1 a deschis și drumul reactoarelor nucleare pentru energie. Cu alte cuvinte, aceeași infrastructură intelectuală care a produs bomba atomică a făcut posibile și numeroase utilizări pașnice ale atomului cum ar fi reactoarele nucleare care in ziua de zi ne dau aprox. 10% din energia lumii.
+
+Etică și dezbateri
+
+Dezbaterea etică nu a început după război, ci în interiorul proiectului însuși. În iunie 1945, raportul coordonat de James Franck la Metallurgical Laboratory a recomandat o demonstrație a bombei pe „un deșert sau o insulă pustie”, argumentând că folosirea ei directă împotriva Japoniei ar putea declanșa rapid o cursă a înarmărilor. În iulie 1945, Szilárd a redactat petiția semnată de zeci de cercetători, cerând președintelui să nu autorizeze folosirea surpriză a bombei fără o reevaluare morală și politică.
+
+Limitări și puncte deschise
+
+Unele cifre istorice diferă în funcție de metodologie. Numărul exact al victimelor de la Hiroshima și Nagasaki nu poate fi stabilit absolut, motiv pentru care acest raport folosește estimările oficiale ale celor două orașe până la sfârșitul lui 1945. La fel, pentru Trinity am folosit randamentul istoric oficial de circa 21 kt, deși cercetări mai recente au propus o reevaluare în jurul a 24,8 ± 2 kt; această diferență nu schimbă însă concluzia istorică principală, anume că testul a validat decisiv designul cu implozie.
+
+
+
+
+- Atomic Heritage Foundation. Scrisoarea Einstein-Szilard
+https://ahf.nuclearmuseum.org/ahf/key-documents/einstein-szilard-letter/
+
+- Atomic Heritage Foundation. Petitia lui Szilard.
+https://ahf.nuclearmuseum.org/ahf/key-documents/szilard-petition/
+
+- National Security Archive
+https://nsarchive.gwu.edu/document/28456-document-38-e-lapp-leo-szilard-et-al-petition-president-united-states-july-17-1945
+https://nsarchive.gwu.edu/document/28523-document-22-memorandum-arthur-b-compton-secretary-war-enclosing-memorandum-political
+https://nsarchive.gwu.edu/document/28516-document-15-minutes-third-target-committee-meeting-washington-may-28-1945-top-secret
+
+- Truman Library & Museum. (1945, August 6). https://www.trumanlibrary.gov/library/public-papers/93/statement-president-announcing-use-bomb-hiroshima
+
+- Office of Scientific and Technical Information. Testul Trinity, 16 Iulie 1945. https://www.osti.gov/opennet/manhattan-project-history/Events/1945/trinity.htm
+
+- National Park Service. 
+https://www.nps.gov/mapr/learn/manhattan-project.htm
+
+- Department of Energy
+https://www.energy.gov/orem/history
+
+- Los Alamos National Laboratory. – Povestea celor doua design-uri de bombe
+https://www.lanl.gov/media/publications/the-vault/1023-a-tale-of-two-bomb-designs
+
+- International Atomic Energy Agency
+https://www.iaea.org/about/overview/history
+
+- International Atomic Energy Agency.
+https://www.iaea.org/topics/non-proliferation-treaty
+
+- City of Hiroshima
+https://www.city.hiroshima.lg.jp/english/peace/1029920/1009857.html
+
+- Nagasaki Peace
+https://nagasakipeace.jp/en/reference/materials/kids/higai.html
+
